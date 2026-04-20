@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" role="img" aria-label="Euromecanic Corp crest">
+  <defs>
+    <linearGradient id="goldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d97a"></stop>
+      <stop offset="0.5" stop-color="#d4b254"></stop>
+      <stop offset="1" stop-color="#8a6a1f"></stop>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecc866"></stop>
+      <stop offset="1" stop-color="#a88432"></stop>
+    </linearGradient>
+    <linearGradient id="redFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8242b"></stop>
+      <stop offset="1" stop-color="#7e1217"></stop>
+    </linearGradient>
+    <radialGradient id="redGlow" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#c93039"></stop>
+      <stop offset="1" stop-color="#7e1217"></stop>
+    </radialGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"></stop>
+      <stop offset="1" stop-color="#d8d3c7"></stop>
+    </linearGradient>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0c54e"></stop>
+      <stop offset="1" stop-color="#8a6822"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <g id="crown">
+    
+    <rect x="120" y="128" width="160" height="26" rx="3" fill="url(#goldFill)" stroke="#6c4f15" stroke-width="1.4"></rect>
+    
+    <circle cx="145" cy="141" r="4" fill="#c93039" stroke="#6c4f15" stroke-width="0.6"></circle>
+    <circle cx="172" cy="141" r="3.2" fill="#2b78a8" stroke="#6c4f15" stroke-width="0.5"></circle>
+    <circle cx="200" cy="141" r="4" fill="#1f9d5c" stroke="#6c4f15" stroke-width="0.6"></circle>
+    <circle cx="228" cy="141" r="3.2" fill="#2b78a8" stroke="#6c4f15" stroke-width="0.5"></circle>
+    <circle cx="255" cy="141" r="4" fill="#c93039" stroke="#6c4f15" stroke-width="0.6"></circle>
+
+    
+    <path d="M125 128 Q200 86 275 128 L275 80 Q200 60 125 80 Z" fill="url(#redGlow)" stroke="#5a0d12" stroke-width="1"></path>
+
+    
+    <g fill="none" stroke="url(#goldTrim)" stroke-width="3" stroke-linecap="round">
+      <path d="M130 128 Q150 78 200 70"></path>
+      <path d="M270 128 Q250 78 200 70"></path>
+      <path d="M170 128 Q185 95 200 90"></path>
+      <path d="M230 128 Q215 95 200 90"></path>
+    </g>
+    
+    <g fill="#f8edc2" stroke="#7a5913" stroke-width="0.5">
+      <circle cx="135" cy="115" r="2.4"></circle>
+      <circle cx="146" cy="102" r="2.4"></circle>
+      <circle cx="160" cy="90" r="2.4"></circle>
+      <circle cx="176" cy="80" r="2.4"></circle>
+      <circle cx="192" cy="73" r="2.4"></circle>
+      <circle cx="208" cy="73" r="2.4"></circle>
+      <circle cx="224" cy="80" r="2.4"></circle>
+      <circle cx="240" cy="90" r="2.4"></circle>
+      <circle cx="254" cy="102" r="2.4"></circle>
+      <circle cx="265" cy="115" r="2.4"></circle>
+    </g>
+    
+    <g fill="url(#goldFill)" stroke="#6c4f15" stroke-width="0.7">
+      <path d="M150 128 q-4 -10 0 -16 q4 6 0 16 Z"></path>
+      <path d="M200 128 q-6 -12 0 -18 q6 6 0 18 Z"></path>
+      <path d="M250 128 q-4 -10 0 -16 q4 6 0 16 Z"></path>
+    </g>
+
+    
+    <circle cx="200" cy="56" r="8" fill="#2b78a8" stroke="#6c4f15" stroke-width="1"></circle>
+    <circle cx="200" cy="56" r="3" fill="#f8edc2" opacity="0.6"></circle>
+    <line x1="200" y1="48" x2="200" y2="24" stroke="url(#goldFill)" stroke-width="2.6" stroke-linecap="round"></line>
+    <line x1="192" y1="32" x2="208" y2="32" stroke="url(#goldFill)" stroke-width="2.6" stroke-linecap="round"></line>
+  </g>
+
+  
+  
+  <path id="shieldOuter" d="&#xA;    M 84 170&#xA;    L 316 170&#xA;    L 316 340&#xA;    C 316 410, 280 465, 200 498&#xA;    C 120 465, 84 410, 84 340&#xA;    Z" fill="url(#goldTrim)" stroke="#5a3d0a" stroke-width="2"></path>
+
+  
+  <path d="&#xA;    M 92 178&#xA;    L 308 178&#xA;    L 308 338&#xA;    C 308 402, 276 452, 200 484&#xA;    C 124 452, 92 402, 92 338&#xA;    Z" fill="#0e0e10"></path>
+
+  
+  <path id="shieldField" d="&#xA;    M 98 184&#xA;    L 302 184&#xA;    L 302 336&#xA;    C 302 396, 272 444, 200 474&#xA;    C 128 444, 98 396, 98 336&#xA;    Z" fill="url(#redGlow)"></path>
+
+  
+  <path d="&#xA;    M 108 190&#xA;    L 292 190&#xA;    L 292 220&#xA;    C 230 210, 170 210, 108 220 Z" fill="#ffffff" opacity="0.06"></path>
+
+  
+  <g id="eagle">
+    
+    <path d="&#xA;      M 200 242&#xA;      C 188 242, 182 248, 182 260&#xA;      L 182 308&#xA;      C 182 322, 190 332, 200 334&#xA;      C 210 332, 218 322, 218 308&#xA;      L 218 260&#xA;      C 218 248, 212 242, 200 242 Z" fill="#0e0e10"></path>
+
+    
+    <path d="&#xA;      M 200 214&#xA;      C 192 214, 186 220, 186 230&#xA;      C 186 238, 190 244, 200 246&#xA;      C 210 244, 214 238, 214 230&#xA;      C 214 220, 208 214, 200 214 Z" fill="#0e0e10"></path>
+
+    
+    <path d="M 213 228 L 226 230 L 213 234 Z" fill="#e8ba40" stroke="#6c4f15" stroke-width="0.5"></path>
+    
+    <circle cx="207" cy="228" r="1.4" fill="#f3d97a"></circle>
+
+    
+    <path d="&#xA;      M 186 256&#xA;      C 162 252, 138 258, 120 276&#xA;      C 110 286, 108 300, 112 314&#xA;      L 130 302&#xA;      C 120 314, 118 326, 126 338&#xA;      L 144 320&#xA;      C 138 332, 140 344, 150 354&#xA;      L 168 332&#xA;      C 164 342, 168 352, 178 358&#xA;      L 190 326&#xA;      C 188 306, 188 282, 186 256 Z" fill="#0e0e10"></path>
+
+    
+    <path d="&#xA;      M 214 256&#xA;      C 238 252, 262 258, 280 276&#xA;      C 290 286, 292 300, 288 314&#xA;      L 270 302&#xA;      C 280 314, 282 326, 274 338&#xA;      L 256 320&#xA;      C 262 332, 260 344, 250 354&#xA;      L 232 332&#xA;      C 236 342, 232 352, 222 358&#xA;      L 210 326&#xA;      C 212 306, 212 282, 214 256 Z" fill="#0e0e10"></path>
+
+    
+    <g stroke="#c93039" stroke-width="0.7" fill="none" opacity="0.55">
+      <path d="M134 282 Q150 290 170 296"></path>
+      <path d="M140 302 Q156 308 172 312"></path>
+      <path d="M266 282 Q250 290 230 296"></path>
+      <path d="M260 302 Q244 308 228 312"></path>
+    </g>
+
+    
+    <path d="M 192 334 L 188 344 M 200 334 L 200 346 M 208 334 L 212 344" stroke="#e8ba40" stroke-width="2" stroke-linecap="round"></path>
+
+    
+    <rect x="194" y="248" width="12" height="88" fill="url(#goldFill)" stroke="#6c4f15" stroke-width="0.8" opacity="0.85"></rect>
+    
+    <path d="&#xA;      M 200 254&#xA;      C 192 254, 188 258, 188 268&#xA;      L 188 306&#xA;      C 188 316, 194 324, 200 326&#xA;      C 206 324, 212 316, 212 306&#xA;      L 212 268&#xA;      C 212 258, 208 254, 200 254 Z" fill="#0e0e10"></path>
+  </g>
+
+  
+  <g id="castle" transform="translate(128, 360)">
+    
+    <path d="M -20 50 Q 0 44 30 50 L 30 68 L -20 68 Z" fill="#2b78a8" opacity="0.85"></path>
+    <path d="M -18 54 Q -6 52 6 54 Q 18 56 28 54" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.7"></path>
+    <path d="M -18 62 Q -6 60 6 62 Q 18 64 28 62" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.7"></path>
+
+    
+    <rect x="-4" y="14" width="34" height="38" fill="url(#goldFill)" stroke="#6c4f15" stroke-width="1"></rect>
+    
+    <path d="M -4 14 L -4 6 L 3 6 L 3 12 L 9 12 L 9 6 L 17 6 L 17 12 L 23 12 L 23 6 L 30 6 L 30 14 Z" fill="url(#goldFill)" stroke="#6c4f15" stroke-width="1"></path>
+    
+    <rect x="8" y="-6" width="14" height="20" fill="url(#goldFill)" stroke="#6c4f15" stroke-width="1"></rect>
+    <path d="M 8 -6 L 8 -12 L 11 -12 L 11 -8 L 15 -8 L 15 -12 L 19 -12 L 19 -8 L 22 -8 L 22 -6 Z" fill="url(#goldFill)" stroke="#6c4f15" stroke-width="1"></path>
+    
+    <path d="M 10 38 L 10 52 L 20 52 L 20 38 Q 15 32 10 38 Z" fill="#2b78a8" stroke="#6c4f15" stroke-width="0.6"></path>
+    
+    <rect x="3" y="22" width="5" height="8" fill="#2b78a8"></rect>
+    <rect x="22" y="22" width="5" height="8" fill="#2b78a8"></rect>
+    <rect x="13" y="2" width="4" height="6" fill="#2b78a8"></rect>
+  </g>
+
+  
+  <g id="ship" transform="translate(200, 378)">
+    
+    <path d="&#xA;      M -58 24&#xA;      L 60 24&#xA;      L 50 44&#xA;      C 20 52, -20 52, -48 44 Z" fill="url(#hull)" stroke="#5a3d0a" stroke-width="1.2"></path>
+    
+    <line x1="-50" y1="32" x2="52" y2="32" stroke="#5a3d0a" stroke-width="0.6"></line>
+    <g fill="#0e0e10">
+      <circle cx="-34" cy="36" r="2"></circle>
+      <circle cx="-18" cy="37" r="2"></circle>
+      <circle cx="-2" cy="38" r="2"></circle>
+      <circle cx="14" cy="38" r="2"></circle>
+      <circle cx="30" cy="37" r="2"></circle>
+      <circle cx="44" cy="36" r="2"></circle>
+    </g>
+    
+    <path d="M 40 24 L 40 14 L 58 14 L 58 24 Z" fill="url(#hull)" stroke="#5a3d0a" stroke-width="1"></path>
+
+    
+    <line x1="-30" y1="24" x2="-30" y2="-54" stroke="#5a3d0a" stroke-width="2"></line>
+    <line x1="2" y1="24" x2="2" y2="-62" stroke="#5a3d0a" stroke-width="2"></line>
+    <line x1="34" y1="24" x2="34" y2="-52" stroke="#5a3d0a" stroke-width="2"></line>
+
+    
+    
+    <path d="M -30 -4 Q -46 -10, -50 -30 Q -42 -40, -30 -44 Z" fill="url(#silver)" stroke="#b8b3a6" stroke-width="0.6"></path>
+    <path d="M -30 -20 Q -44 -28, -46 -48 Q -38 -54, -30 -52 Z" fill="url(#silver)" stroke="#b8b3a6" stroke-width="0.6"></path>
+    
+    <path d="M 2 -10 Q -22 -18, -28 -40 Q -14 -52, 2 -56 Z" fill="url(#silver)" stroke="#b8b3a6" stroke-width="0.6"></path>
+    <path d="M 2 -10 Q 26 -18, 32 -40 Q 18 -52, 2 -56 Z" fill="url(#silver)" stroke="#b8b3a6" stroke-width="0.6"></path>
+    
+    <path d="M 34 -4 Q 22 -10, 18 -30 Q 26 -42, 34 -46 Z" fill="url(#silver)" stroke="#b8b3a6" stroke-width="0.6"></path>
+    <path d="M 34 -4 Q 50 -10, 54 -30 Q 46 -42, 34 -46 Z" fill="url(#silver)" stroke="#b8b3a6" stroke-width="0.6"></path>
+
+    
+    <g stroke="#0e0e10" stroke-width="0.4" opacity="0.25" fill="none">
+      <path d="M -46 -26 Q -38 -30, -32 -32"></path>
+      <path d="M -22 -34 Q -12 -40, 0 -44"></path>
+      <path d="M 12 -34 Q 22 -40, 30 -42"></path>
+      <path d="M 38 -28 Q 44 -32, 50 -32"></path>
+    </g>
+
+    
+    <path d="M -30 -54 L -18 -50 L -30 -48 Z" fill="#c93039"></path>
+    <path d="M 2 -62 L 16 -58 L 2 -56 Z" fill="#c93039"></path>
+    <path d="M 34 -52 L 46 -48 L 34 -46 Z" fill="#c93039"></path>
+  </g>
+
+  
+  <g id="checker" transform="translate(200,455)">
+    <clipPath id="baseClip">
+      <path d="M -78 0 L 78 0 L 78 18 C 50 32, -50 32, -78 18 Z"></path>
+    </clipPath>
+    <g clip-path="url(#baseClip)">
+      <rect x="-80" y="0" width="160" height="24" fill="url(#goldFill)"></rect>
+      <g fill="#0e0e10">
+        <rect x="-80" y="0" width="16" height="12"></rect>
+        <rect x="-48" y="0" width="16" height="12"></rect>
+        <rect x="-16" y="0" width="16" height="12"></rect>
+        <rect x="16" y="0" width="16" height="12"></rect>
+        <rect x="48" y="0" width="16" height="12"></rect>
+        <rect x="-64" y="12" width="16" height="12"></rect>
+        <rect x="-32" y="12" width="16" height="12"></rect>
+        <rect x="0" y="12" width="16" height="12"></rect>
+        <rect x="32" y="12" width="16" height="12"></rect>
+        <rect x="64" y="12" width="16" height="12"></rect>
+      </g>
+    </g>
+  </g>
+
+  
+  <path d="&#xA;    M 98 184&#xA;    L 302 184&#xA;    L 302 336&#xA;    C 302 396, 272 444, 200 474&#xA;    C 128 444, 98 396, 98 336&#xA;    Z" fill="none" stroke="url(#goldTrim)" stroke-width="3"></path>
+</svg>
