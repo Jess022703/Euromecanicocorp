@@ -1,34 +1,32 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Euro Mecanico Corp — Taller independiente especializado en Porsche en Sabana Seca, Puerto Rico. Servicio, diagnóstico y restauración desde 2010.">
+<meta name="description" content="Euro Mecanico Corp — Independent Porsche specialist workshop in Sabana Seca, Puerto Rico. Service, diagnostics and restoration since 2010.">
 <title>Euro Mecanico Corp · Porsche Specialists · Sabana Seca, PR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <style>
   :root {
     --bg:          #0b0b0c;
     --bg-elev:     #111113;
     --bg-card:     #131316;
-    --ink:         #f3ede1;
-    --ink-dim:     #8a8277;
-    --ink-mute:    #4e4842;
+    --ink:         #e8e4dc;
+    --ink-dim:     #b4afa7;
+    --ink-mute:    #8a8680;
     --gold:        #d4b254;
     --gold-dim:    #a0842f;
-    --crimson:     #b01e28;   /* richer red */
-    --crimson-s:   #d42e3a;   /* brighter red */
+    --crimson:     #b01e28;
+    --crimson-s:   #d42e3a;
     --crimson-dim: #7a1218;
-    --hair:        rgba(243,237,225,0.08);
-    --hair-s:      rgba(243,237,225,0.15);
+    --hair:        rgba(232,228,220,0.08);
+    --hair-s:      rgba(232,228,220,0.15);
     --hair-gold:   rgba(212,178,84,0.22);
     --hair-red:    rgba(180,30,40,0.3);
-    --serif:       'Cormorant Garamond', 'Times New Roman', serif;
-    --sans:        'DM Sans', system-ui, sans-serif;
-    --mono:        'JetBrains Mono', ui-monospace, monospace;
+    --serif:       'Bodoni Moda', 'Didot', 'Bodoni MT', 'Times New Roman', serif;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,7 +34,7 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: var(--sans);
+    font-family: var(--serif);
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
@@ -72,7 +70,7 @@
   h1,h2,h3,h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.015em; color: var(--ink); line-height: 1.05; }
 
   .eyebrow {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.24em;
+    font-family: var(--serif); font-size: 10.5px; letter-spacing: 0.24em;
     text-transform: uppercase; color: var(--crimson-s);
     display: flex; align-items: center; gap: 12px;
   }
@@ -83,7 +81,7 @@
   @media (max-width:720px) { .section { padding: 80px 0; } }
 
   .sec-head { margin-bottom: 72px; }
-  .sec-head .label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--crimson-s); margin-bottom: 20px; }
+  .sec-head .label { font-family: var(--serif); font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--crimson-s); margin-bottom: 20px; }
   .sec-head h2 { font-size: clamp(34px,4.2vw,58px); font-weight: 300; letter-spacing: -0.025em; }
   .sec-head h2 em { font-style: italic; color: var(--gold); }
   .sec-head .kicker { color: var(--ink-dim); font-size: 15px; line-height: 1.78; max-width: 58ch; margin-top: 20px; }
@@ -98,7 +96,7 @@
   .btn {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 13px 24px;
-    font-family: var(--sans); font-size: 11.5px; font-weight: 400;
+    font-family: var(--serif); font-size: 11.5px; font-weight: 400;
     letter-spacing: 0.13em; text-transform: uppercase;
     border: 1px solid var(--hair-s); color: var(--ink);
     transition: all .25s ease; position: relative; overflow: hidden;
@@ -112,7 +110,7 @@
   .btn-gold { background: var(--gold); color: var(--bg); border-color: var(--gold); }
   .btn-gold::before { background: rgba(0,0,0,.12); }
   .btn-gold:hover { color: var(--bg); border-color: var(--gold); }
-  .btn .arrow { font-family: var(--mono); font-size: 14px; }
+  .btn .arrow { font-family: var(--serif); font-size: 14px; }
 
   /* ---- navbar ---- */
   nav.top {
@@ -134,14 +132,24 @@
   .brand-logo { width: 44px; height: 52px; flex-shrink: 0; filter: drop-shadow(0 2px 6px rgba(0,0,0,.45)); transition: width .3s, height .3s; }
   nav.top.scrolled .brand-logo { width: 38px; height: 44px; }
   .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
-  .brand-info .name { font-family: var(--sans); font-weight: 500; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; }
+  .brand-info .name { font-family: var(--serif); font-weight: 500; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; }
   .brand-info .name span { color: var(--crimson-s); font-size: .75em; }
-  .brand-info .sub { font-family: var(--mono); font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+  .brand-info .sub { font-family: var(--serif); font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
 
   nav .links { display: flex; gap: 32px; align-items: center; }
   nav .links a { font-size: 12.5px; letter-spacing: .03em; opacity: .72; transition: opacity .2s, color .2s; }
   nav .links a:hover { opacity: 1; color: var(--crimson-s); }
   @media (max-width:900px) { nav .links { display: none; } }
+
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+
+  .lang-toggle {
+    font-family: var(--serif); font-size: 11px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-dim);
+    border: 1px solid var(--hair-s); padding: 7px 12px;
+    transition: color .2s, border-color .2s; background: none; cursor: pointer;
+  }
+  .lang-toggle:hover { color: var(--crimson-s); border-color: var(--crimson-s); }
 
   /* ---- hero ---- */
   .hero {
@@ -164,8 +172,6 @@
       linear-gradient(105deg, rgba(11,11,12,.65) 0%, rgba(11,11,12,.08) 55%);
   }
   .hero > * { position: relative; z-index: 2; }
-
-  /* red side accent on hero */
   .hero::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; z-index: 3; background: linear-gradient(180deg, transparent, var(--crimson) 30%, var(--crimson-s) 60%, transparent); opacity: .7; }
 
   .hero-corner { position: absolute; width: 76px; height: 76px; z-index: 2; pointer-events: none; opacity: 0; }
@@ -177,7 +183,7 @@
 
   .hero-meta {
     display: flex; align-items: center; justify-content: space-between;
-    color: var(--ink-mute); font-family: var(--mono);
+    color: var(--ink-mute); font-family: var(--serif);
     font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
     margin-bottom: auto; padding-top: 12px;
   }
@@ -188,7 +194,7 @@
   @media (max-width:600px) { .hero-meta .mid { display: none; } }
 
   .hero-label {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: .28em;
+    font-family: var(--serif); font-size: 10.5px; letter-spacing: .28em;
     text-transform: uppercase; color: var(--crimson-s);
     display: flex; align-items: center; gap: 14px; margin-bottom: 22px;
   }
@@ -214,31 +220,8 @@
   .hero-stats .stat { padding-right: 24px; }
   .hero-stats .stat + .stat { padding-left: 24px; border-left: 1px solid var(--hair); }
   .hero-stats .stat .n { font-family: var(--serif); font-size: 28px; color: var(--gold); font-weight: 400; line-height: 1; }
-  .hero-stats .stat .l { font-family: var(--mono); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute); margin-top: 8px; }
+  .hero-stats .stat .l { font-family: var(--serif); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute); margin-top: 8px; }
   @media (max-width:600px) { .hero-stats { grid-template-columns: repeat(2,1fr); max-width:none; } .hero-stats .stat+.stat { padding-left: 0; border-left: 0; } .hero-stats .stat:nth-child(2) { padding-left: 24px; border-left: 1px solid var(--hair); } }
-
-  /* spec card */
-  .spec-card {
-    position: absolute; top: 120px; right: 5%; z-index: 3;
-    width: 244px; padding: 20px 22px;
-    background: rgba(13,13,16,.9);
-    border: 1px solid var(--hair-red);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  }
-  .spec-card::before { content: ""; position: absolute; top: -1px; left: -1px; width: 22px; height: 22px; border-top: 1px solid var(--crimson-s); border-left: 1px solid var(--crimson-s); }
-  .spec-card::after  { content: ""; position: absolute; bottom: -1px; right: -1px; width: 22px; height: 22px; border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); }
-  .sc-head { font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--crimson-s); display: flex; align-items: center; gap: 8px; }
-  .sc-head .dot { width: 3px; height: 3px; background: var(--crimson-s); transform: rotate(45deg); }
-  .sc-head .tag { color: var(--ink-mute); }
-  .sc-name { font-family: var(--serif); font-size: 28px; font-weight: 300; letter-spacing: -.02em; margin-top: 10px; }
-  .sc-name em { color: var(--gold); font-style: italic; }
-  .sc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--hair); }
-  .sc-grid > div { display: flex; flex-direction: column; gap: 3px; }
-  .sc-grid span { font-family: var(--mono); font-size: 8px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-mute); }
-  .sc-grid b { font-family: var(--serif); font-size: 13px; font-weight: 400; }
-  .sc-foot { display: flex; justify-content: space-between; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--hair); font-family: var(--mono); font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-mute); }
-  .sc-foot .seal { color: var(--crimson-s); }
-  @media (max-width:1100px) { .spec-card { display: none; } }
 
   /* ---- services ---- */
   .services-grid {
@@ -269,11 +252,11 @@
   }
   .svc:hover .svc-icon { opacity: 1; }
   .svc-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
-  .svc-num { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--ink-mute); margin-bottom: 14px; }
+  .svc-num { font-family: var(--serif); font-size: 10px; letter-spacing: .22em; color: var(--ink-mute); margin-bottom: 14px; }
   .svc h3 { font-family: var(--serif); font-size: 25px; font-weight: 400; line-height: 1.15; }
   .svc p { color: var(--ink-dim); font-size: 13.5px; line-height: 1.72; margin-top: 12px; flex: 1; }
   .svc-link {
-    margin-top: 28px; font-family: var(--mono); font-size: 9.5px;
+    margin-top: 28px; font-family: var(--serif); font-size: 9.5px;
     letter-spacing: .22em; text-transform: uppercase; color: var(--ink-mute);
     display: flex; align-items: center; gap: 10px; transition: color .3s;
   }
@@ -292,7 +275,7 @@
   .about-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.28) contrast(1.06); transition: transform .7s ease; }
   .about-img:hover img { transform: scale(1.03); }
   .about-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 52%,rgba(11,11,12,.75) 100%); pointer-events: none; }
-  .about-img .img-tag { position: absolute; bottom: 20px; left: 20px; z-index: 2; font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-dim); display: flex; align-items: center; gap: 10px; }
+  .about-img .img-tag { position: absolute; bottom: 20px; left: 20px; z-index: 2; font-family: var(--serif); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-dim); display: flex; align-items: center; gap: 10px; }
   .about-img .img-tag::before { content: ""; width: 18px; height: 1px; background: var(--crimson-s); }
   .about-img .img-crest { position: absolute; top: 14px; left: 14px; z-index: 2; width: 46px; height: 54px; filter: drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
 
@@ -319,7 +302,7 @@
     clip-path: polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);
   }
   .owner-name { font-family: var(--serif); font-size: 21px; font-weight: 400; }
-  .owner-role { font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--crimson-s); margin-top: 5px; }
+  .owner-role { font-family: var(--serif); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--crimson-s); margin-top: 5px; }
   .owner-bio { font-size: 13px; color: var(--ink-dim); margin-top: 8px; line-height: 1.65; }
 
   /* ---- principles ---- */
@@ -343,27 +326,73 @@
   @media (max-width:560px) { .principles-grid { grid-template-columns: 1fr; } .principle,.principle:nth-child(2) { border-right: 0; } }
 
   /* ---- models ---- */
-  .models-table { border-top: 1px solid var(--hair); margin-top: 12px; }
-  .model-row {
-    display: grid; grid-template-columns: 60px 1fr 2fr 120px;
-    gap: 24px; padding: 26px 8px;
-    border-bottom: 1px solid var(--hair); align-items: center;
-    transition: all .3s; position: relative;
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 12px;
   }
-  .model-row::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--crimson-s); transform: scaleY(0); transition: transform .35s ease; }
-  .model-row:hover { padding-left: 22px; background: rgba(180,30,40,.03); }
-  .model-row:hover::before { transform: scaleY(1); }
-  .model-row:hover .m-name { color: var(--crimson-s); }
-  .m-num { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-mute); }
-  .m-name { font-family: var(--serif); font-size: 38px; font-weight: 300; letter-spacing: -.01em; line-height: 1; transition: color .3s; }
-  .m-name em { font-style: italic; }
-  .m-desc { color: var(--ink-dim); font-size: 13.5px; line-height: 1.6; }
-  .m-years { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--ink-dim); text-align: right; text-transform: uppercase; }
-  @media (max-width:900px) {
-    .model-row { grid-template-columns: 44px 1fr; gap: 12px; padding: 20px 8px; }
-    .m-name { font-size: 28px; }
-    .m-desc, .m-years { grid-column: 2; }
-    .m-years { text-align: left; }
+  /* 4-col default; wide card (BC) spans 2 → 911 + BC(2) + Cayenne = row 1; remaining 4 = row 2 */
+  @media (max-width:1100px) { .models-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width:420px)  { .models-grid { grid-template-columns: 1fr; } }
+
+  .mcard {
+    position: relative; aspect-ratio: 3/4; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 22px 18px;
+    cursor: default;
+  }
+  .mcard-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-size: cover; background-position: center;
+    filter: grayscale(.22) brightness(.6);
+    transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s;
+  }
+  .mcard:hover .mcard-bg { transform: scale(1.06); filter: grayscale(.1) brightness(.72); }
+  .mcard::after {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(0deg, rgba(11,11,12,.92) 0%, rgba(11,11,12,.4) 50%, rgba(11,11,12,.1) 100%);
+  }
+  .mcard-body { position: relative; z-index: 2; }
+  .mcard-num { font-family: var(--serif); font-size: 9.5px; letter-spacing: .22em; color: var(--crimson-s); text-transform: uppercase; margin-bottom: 8px; }
+  .mcard-name { font-family: var(--serif); font-size: 26px; font-weight: 300; letter-spacing: -.01em; line-height: 1.05; color: var(--ink); }
+  .mcard-name em { font-style: italic; color: var(--gold); }
+  .mcard-desc { color: var(--ink-dim); font-size: 12px; line-height: 1.55; margin-top: 8px; }
+  .mcard-years { font-family: var(--serif); font-size: 9px; letter-spacing: .14em; color: var(--ink-mute); text-transform: uppercase; margin-top: 10px; }
+  .mcard-line { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; z-index: 2; background: var(--crimson-s); transform: scaleX(0); transform-origin: left; transition: transform .4s ease; }
+  .mcard:hover .mcard-line { transform: scaleX(1); }
+
+  /* ---- Boxster / Cayman split card ---- */
+  .mcard--wide { grid-column: span 2; aspect-ratio: 3/2; }
+  .mcard-bg-half {
+    position: absolute; top: 0; bottom: 0; width: 50%;
+    background-size: cover; background-position: center;
+    filter: grayscale(.22) brightness(.6);
+    transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s;
+    z-index: 0;
+  }
+  .mcard-bg-half.left  { left: 0; }
+  .mcard-bg-half.right { right: 0; }
+  .mcard--wide:hover .mcard-bg-half { transform: scale(1.05); filter: grayscale(.08) brightness(.74); }
+  .mcard-split-divider {
+    position: absolute; left: calc(50% - 1px); top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, transparent 8%, rgba(212,46,58,.55) 30%, rgba(212,46,58,.55) 70%, transparent 92%);
+    z-index: 3; pointer-events: none;
+  }
+  .mcard-sub-labels {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 4;
+    display: flex; pointer-events: none;
+  }
+  .mcard-sub-labels .slbl {
+    flex: 1; padding: 16px 18px;
+    font-family: var(--serif); font-size: 9px; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--crimson-s); opacity: .85;
+  }
+  .mcard-sub-labels .slbl.right { text-align: right; }
+  @media (max-width:420px) {
+    .mcard--wide { grid-column: span 1; aspect-ratio: 3/4; }
+    .mcard-bg-half.right, .mcard-split-divider, .mcard-sub-labels { display: none; }
+    .mcard-bg-half.left { width: 100%; }
   }
 
   /* ---- contact ---- */
@@ -379,9 +408,9 @@
   .c-info .intro { color: var(--ink-dim); font-size: 14.5px; margin-top: 16px; line-height: 1.75; max-width: 40ch; }
 
   .info-blk { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--hair); }
-  .info-blk .lbl { font-family: var(--mono); font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--crimson-s); margin-bottom: 9px; }
+  .info-blk .lbl { font-family: var(--serif); font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--crimson-s); margin-bottom: 9px; }
   .info-blk .val { font-family: var(--serif); font-size: 19px; line-height: 1.45; }
-  .info-blk .val.sm { font-size: 15px; font-family: var(--sans); font-weight: 300; }
+  .info-blk .val.sm { font-size: 15px; font-weight: 300; }
   .info-blk .val a { transition: color .2s; }
   .info-blk .val a:hover { color: var(--crimson-s); }
 
@@ -399,7 +428,7 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width:560px) { .form-row { grid-template-columns: 1fr; } }
   .fg { display: flex; flex-direction: column; gap: 8px; }
-  .fg label { font-family: var(--mono); font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--crimson-s); }
+  .fg label { font-family: var(--serif); font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--crimson-s); }
   .fg input, .fg select, .fg textarea {
     padding: 11px 14px;
     border: 1px solid var(--hair-s);
@@ -415,7 +444,7 @@
   .fg select option { background: #1a1a1d; color: var(--ink); }
 
   /* VIN result */
-  .vin-result { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; color: var(--ink-mute); min-height: 18px; transition: color .3s; }
+  .vin-result { font-family: var(--serif); font-size: 10.5px; letter-spacing: .12em; color: var(--ink-mute); min-height: 18px; transition: color .3s; }
   .vin-result.ok { color: var(--gold); }
   .vin-result.err { color: var(--crimson-s); }
 
@@ -433,7 +462,7 @@
     position: absolute; bottom: 18px; left: 18px; z-index: 2;
     background: rgba(11,11,12,.88); border: 1px solid var(--hair-red);
     padding: 10px 14px; backdrop-filter: blur(8px);
-    font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+    font-family: var(--serif); font-size: 10px; letter-spacing: .18em;
     text-transform: uppercase; color: var(--ink-dim);
     display: flex; align-items: center; gap: 10px;
   }
@@ -450,13 +479,13 @@
   .foot-name { font-family: var(--serif); font-size: clamp(36px,6vw,82px); font-weight: 300; line-height: .95; letter-spacing: -.025em; text-align: center; }
   .foot-name em { font-style: italic; color: var(--crimson-s); }
   .foot-name .corp { color: var(--gold); font-size: .55em; font-style: normal; letter-spacing: .18em; vertical-align: middle; }
-  .foot-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-dim); line-height: 1.9; text-align: right; }
+  .foot-tag { font-family: var(--serif); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-dim); line-height: 1.9; text-align: right; }
   @media (max-width:900px) { .foot-name { text-align: left; } .foot-tag { text-align: left; } }
 
   .foot-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--hair); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .foot-copy { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute); }
+  .foot-copy { font-family: var(--serif); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute); }
   .foot-nav { display: flex; gap: 22px; flex-wrap: wrap; }
-  .foot-nav a { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute); transition: color .2s; }
+  .foot-nav a { font-family: var(--serif); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute); transition: color .2s; }
   .foot-nav a:hover { color: var(--crimson-s); }
 
   /* ---- reveal ---- */
@@ -490,12 +519,15 @@
     </div>
   </a>
   <div class="links">
-    <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#modelos">Modelos</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#services" data-i18n="nav_services">Services</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#models" data-i18n="nav_models">Models</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
   </div>
-  <a href="#contacto" class="btn btn-red">Agendar cita <span class="arrow">→</span></a>
+  <div class="nav-right">
+    <button class="lang-toggle" id="langBtn" onclick="toggleLang()">ES</button>
+    <a href="#contact" class="btn btn-red" data-i18n="nav_cta">Book a visit <span class="arrow">→</span></a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -509,84 +541,84 @@
 
   <div class="wrap hero-meta fade">
     <div class="loc">Sabana Seca · Puerto Rico</div>
-    <div class="mid"><span class="bar"></span><span>Independent Porsche Specialists</span><span class="bar"></span></div>
+    <div class="mid"><span class="bar"></span><span data-i18n="hero_meta_mid">Independent Porsche Specialists</span><span class="bar"></span></div>
     <div style="color:var(--crimson-s);display:flex;align-items:center;gap:9px">
-      <span style="width:18px;height:1px;background:var(--crimson-s);display:inline-block"></span>Since 2010
+      <span style="width:18px;height:1px;background:var(--crimson-s);display:inline-block"></span><span data-i18n="hero_since">Since 2010</span>
     </div>
   </div>
 
   <div class="wrap">
-    <div class="hero-label fade">Especialistas independientes</div>
+    <div class="hero-label fade" data-i18n="hero_label">Independent specialists</div>
     <h1 class="fade d1">
       Precision for<br/>
       those who know<br/>
       the <em><span class="u">difference.</span></em>
     </h1>
-    <p class="hero-sub fade d2">Un taller independiente dedicado exclusivamente al servicio, diagnóstico y restauración de vehículos Porsche. Quince años de experiencia bajo un mismo escudo, al servicio de propietarios exigentes en Puerto Rico.</p>
+    <p class="hero-sub fade d2" data-i18n="hero_sub">An independent workshop dedicated exclusively to the service, diagnostics and restoration of Porsche vehicles. Fifteen years of focused expertise under one roof, serving discerning owners throughout Puerto Rico.</p>
     <div class="hero-actions fade d3">
-      <a href="#contacto" class="btn btn-red">Agendar cita <span class="arrow">→</span></a>
-      <a href="#servicios" class="btn">Ver servicios</a>
+      <a href="#contact" class="btn btn-red" data-i18n="hero_cta1">Book a visit <span class="arrow">→</span></a>
+      <a href="#services" class="btn" data-i18n="hero_cta2">Our services</a>
     </div>
     <div class="hero-stats fade d4">
-      <div class="stat"><div class="n"><span class="count" data-target="15" data-suffix="+">0+</span></div><div class="l">Años enfocados</div></div>
-      <div class="stat"><div class="n"><span class="count" data-target="7">0</span></div><div class="l">Modelos atendidos</div></div>
-      <div class="stat"><div class="n">1:1</div><div class="l">Atención directa</div></div>
-      <div class="stat"><div class="n">PR</div><div class="l">Sabana Seca</div></div>
+      <div class="stat"><div class="n"><span class="count" data-target="15" data-suffix="+">0+</span></div><div class="l" data-i18n="stat1">Years focused</div></div>
+      <div class="stat"><div class="n"><span class="count" data-target="6">0</span></div><div class="l" data-i18n="stat2">Models served</div></div>
+      <div class="stat"><div class="n">1:1</div><div class="l" data-i18n="stat3">Direct attention</div></div>
+      <div class="stat"><div class="n">PR</div><div class="l" data-i18n="stat4">Sabana Seca</div></div>
     </div>
   </div>
 </header>
 
 <!-- SERVICES -->
-<section class="section" id="servicios">
+<section class="section" id="services">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="label">I · Servicios</div>
-      <h2>Servicio <em>integral,</em><br/>sin atajos.</h2>
-      <p class="kicker">Cada servicio se realiza bajo las especificaciones y tolerancias del fabricante. Inspección previa, diagnóstico documentado y explicación clara antes de cualquier intervención.</p>
+      <div class="label" data-i18n="svc_label">I · Services</div>
+      <h2 data-i18n="svc_title">Complete <em>service,</em><br/>no shortcuts.</h2>
+      <p class="kicker" data-i18n="svc_kicker">Every service is performed to manufacturer specifications and tolerances. Pre-inspection, documented diagnosis and a clear explanation before any work begins.</p>
     </div>
 
     <div class="services-grid">
       <div class="svc fade">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
         <div class="svc-num">01</div>
-        <h3>Mantenimiento<br/>preventivo</h3>
-        <p>Aceites, filtros, fluidos, correas y servicios por kilometraje. Trabajamos con intervalos de fábrica y registros detallados.</p>
-        <div class="svc-link"><span class="ln"></span>Reservar</div>
+        <h3 data-i18n="svc1_title">Preventive<br/>maintenance</h3>
+        <p data-i18n="svc1_desc">Oils, filters, fluids, belts and mileage-based services. We follow factory intervals with detailed records.</p>
+        <div class="svc-link"><span class="ln"></span><span data-i18n="svc_book">Schedule</span></div>
       </div>
       <div class="svc fade d1">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="11" rx="1.5"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><circle cx="12" cy="13.5" r="2.5"/><path d="M7 13.5h2.5M14.5 13.5H17"/></svg></div>
         <div class="svc-num">02</div>
-        <h3>Reparación<br/>de motor</h3>
-        <p>IMS, cadena de tiempo, sellos, culatas y reconstrucciones completas — desde el flat-six enfriado por aire hasta el V8 biturbo moderno.</p>
-        <div class="svc-link"><span class="ln"></span>Reservar</div>
+        <h3 data-i18n="svc2_title">Engine<br/>repair</h3>
+        <p data-i18n="svc2_desc">IMS, timing chains, seals, heads and full rebuilds — from air-cooled flat-six to modern twin-turbo V8.</p>
+        <div class="svc-link"><span class="ln"></span><span data-i18n="svc_book">Schedule</span></div>
       </div>
       <div class="svc fade d2">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 9l2 3 2-2 2 3 2-3"/></svg></div>
         <div class="svc-num">03</div>
-        <h3>Diagnóstico<br/>electrónico</h3>
-        <p>Escáneres PIWIS y equipos dedicados para codificación, adaptaciones, PDK, PCM y lectura completa de módulos.</p>
-        <div class="svc-link"><span class="ln"></span>Reservar</div>
+        <h3 data-i18n="svc3_title">Electronic<br/>diagnostics</h3>
+        <p data-i18n="svc3_desc">PIWIS scanners and dedicated tools for coding, adaptations, PDK, PCM and full module reads.</p>
+        <div class="svc-link"><span class="ln"></span><span data-i18n="svc_book">Schedule</span></div>
       </div>
       <div class="svc fade">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1.5"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div>
         <div class="svc-num">04</div>
-        <h3>Frenos &amp;<br/>suspensión</h3>
-        <p>Discos, pastillas, rotores cerámicos, PASM, aire y alineación. Ajuste a especificación y purga completa.</p>
-        <div class="svc-link"><span class="ln"></span>Reservar</div>
+        <h3 data-i18n="svc4_title">Brakes &amp;<br/>suspension</h3>
+        <p data-i18n="svc4_desc">Discs, pads, ceramic rotors, PASM, air suspension and alignment. Spec-correct adjustment and full bleeding.</p>
+        <div class="svc-link"><span class="ln"></span><span data-i18n="svc_book">Schedule</span></div>
       </div>
       <div class="svc fade d1">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg></div>
         <div class="svc-num">05</div>
-        <h3>Aire<br/>acondicionado</h3>
-        <p>Recarga, sellos, compresores y diagnóstico del sistema climático. Indispensable para el clima de la isla.</p>
-        <div class="svc-link"><span class="ln"></span>Reservar</div>
+        <h3 data-i18n="svc5_title">Air<br/>conditioning</h3>
+        <p data-i18n="svc5_desc">Recharge, seals, compressors and full climate system diagnostics. Essential in the island's heat.</p>
+        <div class="svc-link"><span class="ln"></span><span data-i18n="svc_book">Schedule</span></div>
       </div>
       <div class="svc fade d2">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 18a9 9 0 1 1 18 0"/><path d="M12 7v5l3.5 2"/><circle cx="12" cy="18" r="1.5"/></svg></div>
         <div class="svc-num">06</div>
-        <h3>Tuning &amp;<br/>performance</h3>
-        <p>Upgrades conservadores y desarrollados: escape, admisión, suspensión y mapas de ECU con respaldo.</p>
-        <div class="svc-link"><span class="ln"></span>Reservar</div>
+        <h3 data-i18n="svc6_title">Tuning &amp;<br/>performance</h3>
+        <p data-i18n="svc6_desc">Conservative, backed upgrades: exhaust, intake, suspension and ECU maps with full documentation.</p>
+        <div class="svc-link"><span class="ln"></span><span data-i18n="svc_book">Schedule</span></div>
       </div>
     </div>
 
@@ -599,29 +631,29 @@
 </section>
 
 <!-- ABOUT -->
-<section class="section" id="nosotros" style="padding-top:0">
+<section class="section" id="about" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="label">II · Nosotros</div>
-      <h2>Un taller construido <em>alrededor<br/>de una marca.</em></h2>
+      <div class="label" data-i18n="abt_label">II · About us</div>
+      <h2 data-i18n="abt_title">A workshop built <em>around<br/>one marque.</em></h2>
     </div>
     <div class="about-grid">
       <div class="about-img fade">
         <div class="img-crest"><img src="assets/crest.svg" alt=""></div>
-        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1400&q=80" alt="Interior del taller">
-        <div class="img-tag">El taller · Sabana Seca</div>
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1400&q=80" alt="Workshop interior">
+        <div class="img-tag" data-i18n="abt_img_tag">The workshop · Sabana Seca</div>
       </div>
       <div class="about-text">
-        <div class="eyebrow fade d1">La historia bajo el escudo</div>
-        <p class="lead fade d2">"No reparamos carros en general. Reparamos un solo tipo de carro — y lo hacemos bien."</p>
-        <p class="fade d3">Euro Mecanico Corp nació de una convicción sencilla: el propietario de un Porsche merece atención especializada, no generalista. Desde nuestro taller en Sabana Seca, cada vehículo recibe el mismo nivel de cuidado que le daríamos al nuestro.</p>
-        <p class="fade d3">Trabajamos con herramientas dedicadas, piezas OEM o equivalentes certificados, y un registro detallado de cada intervención. Sin sorpresas, sin presión comercial — solo trabajo honesto, bien documentado, y digno del escudo bajo el que operamos.</p>
+        <div class="eyebrow fade d1" data-i18n="abt_eyebrow">The story behind the shield</div>
+        <p class="lead fade d2" data-i18n="abt_quote">"We don't repair cars in general. We repair one type of car — and we do it well."</p>
+        <p class="fade d3" data-i18n="abt_p1">Euro Mecanico Corp was born from a simple conviction: the Porsche owner deserves specialized, not generalist, attention. From our workshop in Sabana Seca, every vehicle receives the same level of care we would give our own.</p>
+        <p class="fade d3" data-i18n="abt_p2">We use dedicated tools, OEM or certified-equivalent parts, and keep a detailed record of every service. No surprises, no sales pressure — just honest work, well documented, worthy of the shield we operate under.</p>
         <div class="owner-card fade d4">
           <div class="owner-mono">EA</div>
           <div>
             <div class="owner-name">Edwin Avilés</div>
-            <div class="owner-role">Fundador · Master Technician</div>
-            <div class="owner-bio">Más de 15 años enfocados exclusivamente en la plataforma Porsche. Atiende personalmente cada vehículo que entra al taller.</div>
+            <div class="owner-role" data-i18n="owner_role">Founder · Master Technician</div>
+            <div class="owner-bio" data-i18n="owner_bio">Over 15 years focused exclusively on the Porsche platform. He personally attends every vehicle that enters the workshop.</div>
           </div>
         </div>
       </div>
@@ -630,57 +662,146 @@
 </section>
 
 <!-- PRINCIPLES -->
-<section class="section principles-bg" id="por-que">
+<section class="section principles-bg" id="why-us">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="label">III · Por qué elegirnos</div>
-      <h2>Cuatro principios <em>no negociables.</em></h2>
+      <div class="label" data-i18n="prin_label">III · Why choose us</div>
+      <h2 data-i18n="prin_title">Four <em>non-negotiable</em> principles.</h2>
     </div>
     <div class="principles-grid">
-      <div class="principle fade"><div class="numeral">I</div><h4>Solo Porsche</h4><p>Un enfoque, una plataforma. No dividimos la atención entre marcas; todo el tiempo y la experiencia se destinan a un solo fabricante.</p></div>
-      <div class="principle fade d1"><div class="numeral">II</div><h4>Diagnóstico honesto</h4><p>Si no hace falta, no se hace. Te mostramos lo encontrado, lo recomendado y lo que puede esperar — con evidencia.</p></div>
-      <div class="principle fade d2"><div class="numeral">III</div><h4>Piezas de calidad</h4><p>Prioridad a piezas OEM y suplidores certificados. Si existe una alternativa de valor, la explicamos antes de instalarla.</p></div>
-      <div class="principle fade d3"><div class="numeral">IV</div><h4>Historial completo</h4><p>Cada servicio queda documentado. Protegemos el valor del vehículo y te acompañamos en su vida útil, no solo en la visita.</p></div>
+      <div class="principle fade">
+        <div class="numeral">I</div>
+        <h4 data-i18n="prin1_h">Porsche only</h4>
+        <p data-i18n="prin1_p">One focus, one platform. We don't split attention between brands — all expertise is devoted to a single manufacturer.</p>
+      </div>
+      <div class="principle fade d1">
+        <div class="numeral">II</div>
+        <h4 data-i18n="prin2_h">Honest diagnosis</h4>
+        <p data-i18n="prin2_p">If it doesn't need doing, it won't be done. We show you what was found, what's recommended, and what can wait — with evidence.</p>
+      </div>
+      <div class="principle fade d2">
+        <div class="numeral">III</div>
+        <h4 data-i18n="prin3_h">Quality parts</h4>
+        <p data-i18n="prin3_p">Priority given to OEM and certified suppliers. If a value alternative exists, we explain it before installing it.</p>
+      </div>
+      <div class="principle fade d3">
+        <div class="numeral">IV</div>
+        <h4 data-i18n="prin4_h">Full history</h4>
+        <p data-i18n="prin4_p">Every service is documented. We protect the vehicle's value and stay with you through its life, not just the visit.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- MODELS -->
-<section class="section" id="modelos">
+<section class="section" id="models">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="label">IV · Modelos que atendemos</div>
-      <h2>De los <em>clásicos</em> enfriados<br/>por aire al Taycan eléctrico.</h2>
-      <p class="kicker">Siete décadas de ingeniería bajo un mismo techo. Trabajamos tanto plataformas aire-refrigerado como las últimas generaciones turbo y eléctricas.</p>
+      <div class="label" data-i18n="mod_label">IV · Models we service</div>
+      <h2 data-i18n="mod_title">From <em>classic</em> air-cooled<br/>to the electric Taycan.</h2>
+      <p class="kicker" data-i18n="mod_kicker">Seven decades of engineering under one roof. We work on both air-cooled platforms and the latest turbo and electric generations.</p>
     </div>
-    <div class="models-table">
-      <div class="model-row fade"><div class="m-num">01</div><div class="m-name">911</div><div class="m-desc">Coupé y cabrio — de los aire-refrigerados (964, 993) a los 992 actuales. Turbo, GT3, GTS.</div><div class="m-years">1964 – 2026</div></div>
-      <div class="model-row fade"><div class="m-num">02</div><div class="m-name">Boxster <em>/</em> Cayman</div><div class="m-desc">Motor central, 986 / 987 / 981 / 982. Incluye GT4 y modelos Spyder.</div><div class="m-years">1996 – 2026</div></div>
-      <div class="model-row fade"><div class="m-num">03</div><div class="m-name">Cayenne</div><div class="m-desc">SUV V6, V8 y plug-in hybrid. Incluye variantes Turbo y Coupé.</div><div class="m-years">2002 – 2026</div></div>
-      <div class="model-row fade"><div class="m-num">04</div><div class="m-name">Panamera</div><div class="m-desc">Grand turismo de cuatro puertas. Sedán y Sport Turismo, hybrid y V8 biturbo.</div><div class="m-years">2009 – 2026</div></div>
-      <div class="model-row fade"><div class="m-num">05</div><div class="m-name">Macan</div><div class="m-desc">Compacto deportivo en variantes de combustión y la nueva plataforma 100% eléctrica.</div><div class="m-years">2014 – 2026</div></div>
-      <div class="model-row fade"><div class="m-num">06</div><div class="m-name">Taycan</div><div class="m-desc">Arquitectura 800V. Servicio de sistemas de alta tensión, refrigeración y actualizaciones.</div><div class="m-years">2020 – 2026</div></div>
-      <div class="model-row fade"><div class="m-num">07</div><div class="m-name">Clásicos <em>air-cooled</em></div><div class="m-desc">356, 911 / 912 clásicos, 930, 964 y 993. Restauración mecánica y preservación.</div><div class="m-years">1948 – 1998</div></div>
+
+    <div class="models-grid">
+
+      <!-- 01 · 911 -->
+      <div class="mcard fade" aria-label="Porsche 911 Carrera front three-quarter view">
+        <div class="mcard-bg" style="background-image:url('https://models.porsche.com/_next/image?q=100&url=https%3A%2F%2Fprs.porsche.com%2Fiod%2Fimage%2FUS%2F9921B2%2F1%2FN4Igxg9gdgZglgcxALlAQynAtmgLnaAZxQG0BdAGnDSwFMAnNFUOAExRFoA9cBaAGwgB3XjHrQ%2B-WjFwgqEAA74izEADc09OBlnIQrWoQDWuRSAC%2B5qrShq44qHSi6W7PQHUAFnFwMIELABBfgVPJnklAihiVEsqfkRPfCgkVBA2DgARQIBNORBFZWjmOJAFcVYAVzAXdLcQAE4GgCYARgAhZvzCqJjQSFhEUhBWgHEADnyAZgBlABZ8uYAxADZF0YAFRYBVdvyAVga9qn2ADVP8lYBJKcuAOQBFfIB2QIAZfIaNyaoGgC0AKL5AEAWS6VFGrSW%2BSuADVwSAru5blQ3qMACqZABKHyoAHlWvkNgAJfIPfaBMlYhpk7Y-EDbDY0qiwgDCCL%2BrRmIEo4AglWc9AAnhxttyqFgIAZ%2BDlaJoUM0AAzNFaWKwgQi0XDJBB9EAwCD0HC6MopfK4RjRBSaGy6C2VWiWIA%3FclientId%3Dicc&w=3840')"></div>
+        <div class="mcard-line"></div>
+        <div class="mcard-body">
+          <div class="mcard-num">01</div>
+          <div class="mcard-name">911</div>
+          <div class="mcard-desc" data-i18n="mod1_desc">Coupé &amp; Cabriolet — air-cooled (964, 993) to current 992. Turbo, GT3, GTS.</div>
+          <div class="mcard-years">1964 – 2026</div>
+        </div>
+      </div>
+
+      <!-- 02 · Boxster / Cayman — split card, spans 2 columns -->
+      <div class="mcard mcard--wide fade d1" aria-label="Porsche 718 Boxster and Cayman">
+        <div class="mcard-bg-half left"  style="background-image:url('https://a.storyblok.com/f/322327/1940x792/166223a17e/bx24i3kox0010_rgb-pasm.jpg/m/975x397/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')"></div>
+        <div class="mcard-bg-half right" style="background-image:url('https://a.storyblok.com/f/322327/1500x792/1bd9139eb3/cm21n3kox0003-718-cayman-gts-40-driving.jpg/m/750x396/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')"></div>
+        <div class="mcard-split-divider"></div>
+        <div class="mcard-sub-labels">
+          <span class="slbl">Boxster</span>
+          <span class="slbl right">Cayman</span>
+        </div>
+        <div class="mcard-line"></div>
+        <div class="mcard-body">
+          <div class="mcard-num">02</div>
+          <div class="mcard-name">Boxster <em>/</em> Cayman</div>
+          <div class="mcard-desc" data-i18n="mod2_desc">Mid-engine, 986 / 987 / 981 / 982. Includes GT4 and Spyder models.</div>
+          <div class="mcard-years">1996 – 2026</div>
+        </div>
+      </div>
+
+      <!-- 03 · Cayenne -->
+      <div class="mcard fade d2" aria-label="Porsche Cayenne front driving view">
+        <div class="mcard-bg" style="background-image:url('https://a.storyblok.com/f/322327/1272x954/b916e455cc/cy24j5box0003-pasm.jpg/m/1272x954/smart/filters%3Aformat%28avif%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')"></div>
+        <div class="mcard-line"></div>
+        <div class="mcard-body">
+          <div class="mcard-num">03</div>
+          <div class="mcard-name">Cayenne</div>
+          <div class="mcard-desc" data-i18n="mod3_desc">V6, V8 and plug-in hybrid SUV. Includes Turbo and Coupé variants.</div>
+          <div class="mcard-years">2002 – 2026</div>
+        </div>
+      </div>
+
+      <!-- 04 · Panamera -->
+      <div class="mcard fade" aria-label="Porsche Panamera front three-quarter top view">
+        <div class="mcard-bg" style="background-image:url('https://a.storyblok.com/f/322327/1272x954/9d3913961d/pa24p5kox000-panamera-turbo-e-hybrid-rear-axle-steering.jpg/m/1272x954/smart/filters%3Aformat%28avif%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')"></div>
+        <div class="mcard-line"></div>
+        <div class="mcard-body">
+          <div class="mcard-num">04</div>
+          <div class="mcard-name">Panamera</div>
+          <div class="mcard-desc" data-i18n="mod4_desc">Four-door grand tourer. Sedan and Sport Turismo, hybrid and twin-turbo V8.</div>
+          <div class="mcard-years">2009 – 2026</div>
+        </div>
+      </div>
+
+      <!-- 05 · Macan -->
+      <div class="mcard fade d1" aria-label="Porsche Macan front three-quarter studio view">
+        <div class="mcard-bg" style="background-image:url('https://a.storyblok.com/f/322327/2250x1980/eb0e85c5d4/ma22t3bix0002-macan-front.jpg/m/760x668/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')"></div>
+        <div class="mcard-line"></div>
+        <div class="mcard-body">
+          <div class="mcard-num">05</div>
+          <div class="mcard-name">Macan</div>
+          <div class="mcard-desc" data-i18n="mod5_desc">Compact sports SUV — combustion variants and the new all-electric platform.</div>
+          <div class="mcard-years">2014 – 2026</div>
+        </div>
+      </div>
+
+      <!-- 06 · Clásicos air-cooled — representative image only -->
+      <div class="mcard fade d2" aria-label="Porsche 356 No. 1 Roadster — representative classic air-cooled">
+        <div class="mcard-bg" style="background-image:url('https://porschepictures.flowcenter.de/pmdb/thumbnail.cgi?crop=1&cs=22fa0d8cb97cdddc&h=1089&id=271387&public=1&w=1935')"></div>
+        <div class="mcard-line"></div>
+        <div class="mcard-body">
+          <div class="mcard-num">06</div>
+          <div class="mcard-name">Clásicos <em>air-cooled</em></div>
+          <div class="mcard-desc" data-i18n="mod7_desc">356, classic 911/912, 930, 964 and 993. Mechanical restoration and preservation.</div>
+          <div class="mcard-years">1948 – 1998</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contacto">
+<section class="section" id="contact">
   <div class="wrap">
     <div class="sec-head fade">
-      <div class="label">V · Contacto</div>
-      <h2>Agenda una <em>visita.</em></h2>
+      <div class="label" data-i18n="ctc_label">V · Contact</div>
+      <h2 data-i18n="ctc_title">Schedule a <em>visit.</em></h2>
     </div>
 
     <div class="contact-layout fade">
       <!-- INFO -->
       <div class="c-info">
-        <h3>Cuéntanos sobre <em>tu</em> Porsche.</h3>
-        <p class="intro">Recibimos vehículos con cita previa. Modelo, año y kilometraje nos ayudan a preparar el diagnóstico antes de tu llegada.</p>
+        <h3 data-i18n="ctc_h3">Tell us about <em>your</em> Porsche.</h3>
+        <p class="intro" data-i18n="ctc_intro">We receive vehicles by appointment. Model, year and mileage help us prepare the diagnosis before your arrival.</p>
 
         <div class="info-blk">
-          <div class="lbl">Dirección</div>
+          <div class="lbl" data-i18n="ctc_addr_lbl">Address</div>
           <div class="val">
             <a href="https://maps.app.goo.gl/p3z9YoYXHSEUt97y7" target="_blank" rel="noopener">
               Calle Barbería #5522<br/>Sabana Seca, PR 00952
@@ -689,78 +810,82 @@
         </div>
 
         <div class="info-blk">
-          <div class="lbl">Teléfono</div>
+          <div class="lbl" data-i18n="ctc_phone_lbl">Phone</div>
           <div class="val"><a href="tel:+17873446328">(787) 344-6328</a></div>
         </div>
 
         <div class="info-blk">
-          <div class="lbl">Horario</div>
+          <div class="lbl" data-i18n="ctc_hours_lbl">Hours</div>
           <div class="hours-grid">
-            <div class="d">Lunes – Viernes</div><div class="t">8:00 – 17:00</div>
-            <div class="d">Sábado</div><div class="t">Solo cita previa</div>
-            <div class="d">Domingo</div><div class="t">Cerrado</div>
+            <div class="d" data-i18n="hours_mf">Monday – Friday</div><div class="t">8:00 – 17:00</div>
+            <div class="d" data-i18n="hours_sat">Saturday</div><div class="t" data-i18n="hours_sat_t">By appointment</div>
+            <div class="d" data-i18n="hours_sun">Sunday</div><div class="t" data-i18n="hours_closed">Closed</div>
           </div>
         </div>
 
         <div class="c-actions">
-          <a class="btn btn-red" href="tel:+17873446328">Llamar ahora <span class="arrow">→</span></a>
-          <a class="btn" href="https://maps.app.goo.gl/p3z9YoYXHSEUt97y7" target="_blank" rel="noopener">Cómo llegar</a>
+          <a class="btn btn-red" href="tel:+17873446328" data-i18n="ctc_call_btn">Call now <span class="arrow">→</span></a>
+          <a class="btn" href="https://maps.app.goo.gl/p3z9YoYXHSEUt97y7" target="_blank" rel="noopener" data-i18n="ctc_dir_btn">Get directions</a>
         </div>
       </div>
 
       <!-- FORM -->
       <div class="c-form-side">
-        <div class="eyebrow" style="margin-bottom:28px">Formulario de solicitud</div>
+        <div class="eyebrow" style="margin-bottom:28px" data-i18n="form_eyebrow">Appointment request form</div>
         <form class="cform" id="cForm" onsubmit="handleForm(event)">
           <input type="hidden" name="access_key" value="56275924-8b65-4997-88d7-b47c1f3bef2d">
-          <input type="hidden" name="subject" value="Nueva solicitud de cita — Euro Mecanico Corp">
+          <input type="hidden" name="subject" value="New appointment request — Euro Mecanico Corp">
           <input type="hidden" name="from_name" value="Euro Mecanico Corp Website">
           <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
             <div class="fg">
-              <label>Nombre</label>
-              <input type="text" name="name" placeholder="Tu nombre completo" required>
+              <label data-i18n="form_name">Name</label>
+              <input type="text" name="name" data-i18n-ph="form_name_ph" placeholder="Your full name" required>
             </div>
             <div class="fg">
-              <label>Correo electrónico</label>
-              <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+              <label data-i18n="form_email">Email</label>
+              <input type="email" name="email" data-i18n-ph="form_email_ph" placeholder="email@example.com" required>
             </div>
+          </div>
+          <div class="fg">
+            <label data-i18n="form_phone">Phone number</label>
+            <input type="tel" name="phone" data-i18n-ph="form_phone_ph" placeholder="(787) 000-0000">
           </div>
           <div class="form-row">
             <div class="fg">
-              <label>Modelo Porsche</label>
-              <input type="text" name="model" placeholder="911 992, Cayenne, Boxster…">
+              <label data-i18n="form_model">Porsche model</label>
+              <input type="text" name="model" data-i18n-ph="form_model_ph" placeholder="911 992, Cayenne, Boxster…">
             </div>
             <div class="fg">
-              <label>Servicio requerido</label>
+              <label data-i18n="form_service">Service needed</label>
               <select name="service">
-                <option value="">Seleccionar…</option>
-                <option>Mantenimiento preventivo</option>
-                <option>Reparación de motor</option>
-                <option>Diagnóstico electrónico</option>
-                <option>Frenos &amp; Suspensión</option>
-                <option>Aire acondicionado</option>
-                <option>Tuning &amp; Performance</option>
-                <option>Otro / Consulta</option>
+                <option value="" data-i18n="form_service_ph">Select…</option>
+                <option data-i18n="svc1_title">Preventive maintenance</option>
+                <option data-i18n="svc2_title">Engine repair</option>
+                <option data-i18n="svc3_title">Electronic diagnostics</option>
+                <option data-i18n="svc4_title">Brakes &amp; Suspension</option>
+                <option data-i18n="svc5_title">Air conditioning</option>
+                <option data-i18n="svc6_title">Tuning &amp; Performance</option>
+                <option data-i18n="form_other">Other / Consultation</option>
               </select>
             </div>
           </div>
           <div class="fg">
-            <label>Número VIN <span style="color:var(--ink-mute);text-transform:none;letter-spacing:0;font-size:8.5px">(opcional — 17 caracteres)</span></label>
-            <input type="text" id="vinInput" name="vin" placeholder="p.ej. WP0AB2A91NS255901" maxlength="17" autocomplete="off" style="text-transform:uppercase;letter-spacing:.08em">
+            <label data-i18n="form_vin">VIN number <span style="color:var(--ink-mute);text-transform:none;letter-spacing:0;font-size:8.5px" data-i18n="form_vin_note">(optional — 17 characters)</span></label>
+            <input type="text" id="vinInput" name="vin" data-i18n-ph="form_vin_ph" placeholder="e.g. WP0AB2A91NS255901" maxlength="17" autocomplete="off" style="text-transform:uppercase;letter-spacing:.08em">
             <div class="vin-result" id="vinResult"></div>
           </div>
           <div class="fg">
-            <label>Mensaje</label>
-            <textarea name="message" placeholder="Describe brevemente el estado del vehículo y lo que necesitas…"></textarea>
+            <label data-i18n="form_msg">Message</label>
+            <textarea name="message" data-i18n-ph="form_msg_ph" placeholder="Briefly describe the vehicle's condition and what you need…"></textarea>
           </div>
           <div>
-            <button type="submit" class="btn btn-red">Enviar solicitud <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-red" data-i18n="form_submit">Send request <span class="arrow">→</span></button>
           </div>
         </form>
         <div id="formSuccess">
           <div class="check">✦</div>
-          <p>Solicitud recibida.<br/>Nos pondremos en contacto contigo pronto.</p>
+          <p data-i18n="form_success">Request received.<br/>We'll be in touch with you shortly.</p>
         </div>
       </div>
     </div>
@@ -786,23 +911,276 @@
       <div class="foot-crest fade"><img src="assets/crest.svg" alt="Euro Mecanico Corp"></div>
       <div class="foot-name fade d1">Euro <em>Mecanico</em> <span class="corp">CORP</span></div>
       <div class="fade d2">
-        <div class="foot-tag">Porsche Independent Specialists<br/>Sabana Seca · Puerto Rico<br/>(787) 344-6328</div>
+        <div class="foot-tag" data-i18n="foot_tag">Porsche Independent Specialists<br/>Sabana Seca · Puerto Rico<br/>(787) 344-6328</div>
       </div>
     </div>
     <div class="foot-bottom">
-      <div class="foot-copy">© 2026 Euro Mecanico Corp · Todos los derechos reservados</div>
+      <div class="foot-copy" data-i18n="foot_copy">© 2026 Euro Mecanico Corp · All rights reserved</div>
       <nav class="foot-nav">
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#modelos">Modelos</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#top">↑ Arriba</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#models" data-i18n="nav_models">Models</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <a href="#top">↑ Top</a>
       </nav>
     </div>
   </div>
 </footer>
 
 <script>
+  // ==============================
+  // TRANSLATIONS
+  // ==============================
+  const T = {
+    en: {
+      nav_services:   'Services',
+      nav_about:      'About',
+      nav_models:     'Models',
+      nav_contact:    'Contact',
+      nav_cta:        'Book a visit →',
+      hero_meta_mid:  'Independent Porsche Specialists',
+      hero_since:     'Since 2010',
+      hero_label:     'Independent specialists',
+      hero_sub:       'An independent workshop dedicated exclusively to the service, diagnostics and restoration of Porsche vehicles. Fifteen years of focused expertise under one roof, serving discerning owners throughout Puerto Rico.',
+      hero_cta1:      'Book a visit →',
+      hero_cta2:      'Our services',
+      stat1:          'Years focused',
+      stat2:          'Models served',
+      stat3:          'Direct attention',
+      stat4:          'Sabana Seca',
+      svc_label:      'I · Services',
+      svc_title:      'Complete service,\u00a0no shortcuts.',
+      svc_kicker:     'Every service is performed to manufacturer specifications and tolerances. Pre-inspection, documented diagnosis and a clear explanation before any work begins.',
+      svc1_title:     'Preventive maintenance',
+      svc1_desc:      'Oils, filters, fluids, belts and mileage-based services. We follow factory intervals with detailed records.',
+      svc2_title:     'Engine repair',
+      svc2_desc:      'IMS, timing chains, seals, heads and full rebuilds — from air-cooled flat-six to modern twin-turbo V8.',
+      svc3_title:     'Electronic diagnostics',
+      svc3_desc:      'PIWIS scanners and dedicated tools for coding, adaptations, PDK, PCM and full module reads.',
+      svc4_title:     'Brakes & suspension',
+      svc4_desc:      'Discs, pads, ceramic rotors, PASM, air suspension and alignment. Spec-correct adjustment and full bleeding.',
+      svc5_title:     'Air conditioning',
+      svc5_desc:      "Recharge, seals, compressors and full climate system diagnostics. Essential in the island's heat.",
+      svc6_title:     'Tuning & performance',
+      svc6_desc:      'Conservative, backed upgrades: exhaust, intake, suspension and ECU maps with full documentation.',
+      svc_book:       'Schedule',
+      abt_label:      'II · About us',
+      abt_title:      'A workshop built around one marque.',
+      abt_eyebrow:    'The story behind the shield',
+      abt_quote:      '"We don\'t repair cars in general. We repair one type of car — and we do it well."',
+      abt_img_tag:    'The workshop · Sabana Seca',
+      abt_p1:         'Euro Mecanico Corp was born from a simple conviction: the Porsche owner deserves specialized, not generalist, attention. From our workshop in Sabana Seca, every vehicle receives the same level of care we would give our own.',
+      abt_p2:         'We use dedicated tools, OEM or certified-equivalent parts, and keep a detailed record of every service. No surprises, no sales pressure — just honest work, well documented, worthy of the shield we operate under.',
+      owner_role:     'Founder · Master Technician',
+      owner_bio:      'Over 15 years focused exclusively on the Porsche platform. He personally attends every vehicle that enters the workshop.',
+      prin_label:     'III · Why choose us',
+      prin_title:     'Four non-negotiable principles.',
+      prin1_h:        'Porsche only',
+      prin1_p:        "One focus, one platform. We don't split attention between brands — all expertise is devoted to a single manufacturer.",
+      prin2_h:        'Honest diagnosis',
+      prin2_p:        "If it doesn't need doing, it won't be done. We show you what was found, what's recommended, and what can wait — with evidence.",
+      prin3_h:        'Quality parts',
+      prin3_p:        'Priority given to OEM and certified suppliers. If a value alternative exists, we explain it before installing it.',
+      prin4_h:        'Full history',
+      prin4_p:        "Every service is documented. We protect the vehicle's value and stay with you through its life, not just the visit.",
+      mod_label:      'IV · Models we service',
+      mod_title:      'From classic air-cooled to the electric Taycan.',
+      mod_kicker:     'Seven decades of engineering under one roof. We work on both air-cooled platforms and the latest turbo and electric generations.',
+      mod1_desc:      'Coupé & Cabriolet — air-cooled (964, 993) to current 992. Turbo, GT3, GTS.',
+      mod2_desc:      'Mid-engine, 986 / 987 / 981 / 982. Includes GT4 and Spyder models.',
+      mod3_desc:      'V6, V8 and plug-in hybrid SUV. Includes Turbo and Coupé variants.',
+      mod4_desc:      'Four-door grand tourer. Sedan and Sport Turismo, hybrid and twin-turbo V8.',
+      mod5_desc:      'Compact sports SUV — combustion variants and the new all-electric platform.',
+      mod6_desc:      '356, classic 911/912, 930, 964 and 993. Mechanical restoration and preservation.',
+      mod7_desc:      '356, classic 911/912, 930, 964 and 993. Mechanical restoration and preservation.',
+      ctc_label:      'V · Contact',
+      ctc_title:      'Schedule a visit.',
+      ctc_h3:         'Tell us about your Porsche.',
+      ctc_intro:      "We receive vehicles by appointment. Model, year and mileage help us prepare the diagnosis before your arrival.",
+      ctc_addr_lbl:   'Address',
+      ctc_phone_lbl:  'Phone',
+      ctc_hours_lbl:  'Hours',
+      hours_mf:       'Monday – Friday',
+      hours_sat:      'Saturday',
+      hours_sat_t:    'By appointment',
+      hours_sun:      'Sunday',
+      hours_closed:   'Closed',
+      ctc_call_btn:   'Call now →',
+      ctc_dir_btn:    'Get directions',
+      form_eyebrow:   'Appointment request form',
+      form_name:      'Name',
+      form_name_ph:   'Your full name',
+      form_email:     'Email',
+      form_email_ph:  'email@example.com',
+      form_phone:     'Phone number',
+      form_phone_ph:  '(787) 000-0000',
+      form_model:     'Porsche model',
+      form_model_ph:  '911 992, Cayenne, Boxster…',
+      form_service:   'Service needed',
+      form_service_ph:'Select…',
+      form_other:     'Other / Consultation',
+      form_vin:       'VIN number',
+      form_vin_note:  '(optional — 17 characters)',
+      form_vin_ph:    'e.g. WP0AB2A91NS255901',
+      form_msg:       'Message',
+      form_msg_ph:    "Briefly describe the vehicle's condition and what you need…",
+      form_submit:    'Send request →',
+      form_success:   "Request received.\nWe'll be in touch with you shortly.",
+      foot_tag:       'Porsche Independent Specialists\nSabana Seca · Puerto Rico\n(787) 344-6328',
+      foot_copy:      '© 2026 Euro Mecanico Corp · All rights reserved',
+      vin_decoding:   'Decoding…',
+      vin_chars:      '/ 17 characters',
+      vin_err_bad:    'VIN not recognized — please verify',
+      vin_err_conn:   'No connection to decode VIN',
+      sending:        'Sending…',
+      send_err:       '⚠ Could not send. Try again or call us at (787) 344-6328.',
+    },
+    es: {
+      nav_services:   'Servicios',
+      nav_about:      'Nosotros',
+      nav_models:     'Modelos',
+      nav_contact:    'Contacto',
+      nav_cta:        'Agendar cita →',
+      hero_meta_mid:  'Especialistas independientes en Porsche',
+      hero_since:     'Desde 2010',
+      hero_label:     'Especialistas independientes',
+      hero_sub:       'Un taller independiente dedicado exclusivamente al servicio, diagnóstico y restauración de vehículos Porsche. Quince años de experiencia bajo un mismo escudo, al servicio de propietarios exigentes en Puerto Rico.',
+      hero_cta1:      'Agendar cita →',
+      hero_cta2:      'Ver servicios',
+      stat1:          'Años enfocados',
+      stat2:          'Modelos atendidos',
+      stat3:          'Atención directa',
+      stat4:          'Sabana Seca',
+      svc_label:      'I · Servicios',
+      svc_title:      'Servicio integral,\u00a0sin atajos.',
+      svc_kicker:     'Cada servicio se realiza bajo las especificaciones y tolerancias del fabricante. Inspección previa, diagnóstico documentado y explicación clara antes de cualquier intervención.',
+      svc1_title:     'Mantenimiento preventivo',
+      svc1_desc:      'Aceites, filtros, fluidos, correas y servicios por kilometraje. Trabajamos con intervalos de fábrica y registros detallados.',
+      svc2_title:     'Reparación de motor',
+      svc2_desc:      'IMS, cadena de tiempo, sellos, culatas y reconstrucciones completas — desde el flat-six enfriado por aire hasta el V8 biturbo moderno.',
+      svc3_title:     'Diagnóstico electrónico',
+      svc3_desc:      'Escáneres PIWIS y equipos dedicados para codificación, adaptaciones, PDK, PCM y lectura completa de módulos.',
+      svc4_title:     'Frenos & suspensión',
+      svc4_desc:      'Discos, pastillas, rotores cerámicos, PASM, aire y alineación. Ajuste a especificación y purga completa.',
+      svc5_title:     'Aire acondicionado',
+      svc5_desc:      'Recarga, sellos, compresores y diagnóstico del sistema climático. Indispensable para el clima de la isla.',
+      svc6_title:     'Tuning & performance',
+      svc6_desc:      'Upgrades conservadores y documentados: escape, admisión, suspensión y mapas de ECU con respaldo.',
+      svc_book:       'Reservar',
+      abt_label:      'II · Nosotros',
+      abt_title:      'Un taller construido alrededor de una marca.',
+      abt_eyebrow:    'La historia bajo el escudo',
+      abt_quote:      '"No reparamos carros en general. Reparamos un solo tipo de carro — y lo hacemos bien."',
+      abt_img_tag:    'El taller · Sabana Seca',
+      abt_p1:         'Euro Mecanico Corp nació de una convicción sencilla: el propietario de un Porsche merece atención especializada, no generalista. Desde nuestro taller en Sabana Seca, cada vehículo recibe el mismo nivel de cuidado que le daríamos al nuestro.',
+      abt_p2:         'Trabajamos con herramientas dedicadas, piezas OEM o equivalentes certificados, y un registro detallado de cada intervención. Sin sorpresas, sin presión comercial — solo trabajo honesto, bien documentado, y digno del escudo bajo el que operamos.',
+      owner_role:     'Fundador · Master Technician',
+      owner_bio:      'Más de 15 años enfocados exclusivamente en la plataforma Porsche. Atiende personalmente cada vehículo que entra al taller.',
+      prin_label:     'III · Por qué elegirnos',
+      prin_title:     'Cuatro principios no negociables.',
+      prin1_h:        'Solo Porsche',
+      prin1_p:        'Un enfoque, una plataforma. No dividimos la atención entre marcas; todo el tiempo y la experiencia se destinan a un solo fabricante.',
+      prin2_h:        'Diagnóstico honesto',
+      prin2_p:        'Si no hace falta, no se hace. Te mostramos lo encontrado, lo recomendado y lo que puede esperar — con evidencia.',
+      prin3_h:        'Piezas de calidad',
+      prin3_p:        'Prioridad a piezas OEM y suplidores certificados. Si existe una alternativa de valor, la explicamos antes de instalarla.',
+      prin4_h:        'Historial completo',
+      prin4_p:        'Cada servicio queda documentado. Protegemos el valor del vehículo y te acompañamos en su vida útil, no solo en la visita.',
+      mod_label:      'IV · Modelos que atendemos',
+      mod_title:      'De los clásicos enfriados por aire al Taycan eléctrico.',
+      mod_kicker:     'Siete décadas de ingeniería bajo un mismo techo. Trabajamos tanto plataformas aire-refrigerado como las últimas generaciones turbo y eléctricas.',
+      mod1_desc:      'Coupé y cabrio — de los aire-refrigerados (964, 993) a los 992 actuales. Turbo, GT3, GTS.',
+      mod2_desc:      'Motor central, 986 / 987 / 981 / 982. Incluye GT4 y modelos Spyder.',
+      mod3_desc:      'SUV V6, V8 y plug-in hybrid. Incluye variantes Turbo y Coupé.',
+      mod4_desc:      'Grand turismo de cuatro puertas. Sedán y Sport Turismo, hybrid y V8 biturbo.',
+      mod5_desc:      'Compacto deportivo en variantes de combustión y la nueva plataforma 100% eléctrica.',
+      mod6_desc:      '356, 911 / 912 clásicos, 930, 964 y 993. Restauración mecánica y preservación.',
+      mod7_desc:      '356, 911 / 912 clásicos, 930, 964 y 993. Restauración mecánica y preservación.',
+      ctc_label:      'V · Contacto',
+      ctc_title:      'Agenda una visita.',
+      ctc_h3:         'Cuéntanos sobre tu Porsche.',
+      ctc_intro:      'Recibimos vehículos con cita previa. Modelo, año y kilometraje nos ayudan a preparar el diagnóstico antes de tu llegada.',
+      ctc_addr_lbl:   'Dirección',
+      ctc_phone_lbl:  'Teléfono',
+      ctc_hours_lbl:  'Horario',
+      hours_mf:       'Lunes – Viernes',
+      hours_sat:      'Sábado',
+      hours_sat_t:    'Solo cita previa',
+      hours_sun:      'Domingo',
+      hours_closed:   'Cerrado',
+      ctc_call_btn:   'Llamar ahora →',
+      ctc_dir_btn:    'Cómo llegar',
+      form_eyebrow:   'Formulario de solicitud',
+      form_name:      'Nombre',
+      form_name_ph:   'Tu nombre completo',
+      form_email:     'Correo electrónico',
+      form_email_ph:  'correo@ejemplo.com',
+      form_phone:     'Número de teléfono',
+      form_phone_ph:  '(787) 000-0000',
+      form_model:     'Modelo Porsche',
+      form_model_ph:  '911 992, Cayenne, Boxster…',
+      form_service:   'Servicio requerido',
+      form_service_ph:'Seleccionar…',
+      form_other:     'Otro / Consulta',
+      form_vin:       'Número VIN',
+      form_vin_note:  '(opcional — 17 caracteres)',
+      form_vin_ph:    'ej. WP0AB2A91NS255901',
+      form_msg:       'Mensaje',
+      form_msg_ph:    'Describe brevemente el estado del vehículo y lo que necesitas…',
+      form_submit:    'Enviar solicitud →',
+      form_success:   'Solicitud recibida.\nNos pondremos en contacto contigo pronto.',
+      foot_tag:       'Porsche Independent Specialists\nSabana Seca · Puerto Rico\n(787) 344-6328',
+      foot_copy:      '© 2026 Euro Mecanico Corp · Todos los derechos reservados',
+      vin_decoding:   'Decodificando…',
+      vin_chars:      '/ 17 caracteres',
+      vin_err_bad:    'VIN no reconocido — verifica el número',
+      vin_err_conn:   'Sin conexión para decodificar',
+      sending:        'Enviando…',
+      send_err:       '⚠ No se pudo enviar. Intenta de nuevo o llámanos al (787) 344-6328.',
+    }
+  };
+
+  let lang = 'en';
+
+  function setLang(l) {
+    lang = l;
+    const t = T[l];
+    document.documentElement.lang = l;
+    document.getElementById('langBtn').textContent = l === 'en' ? 'ES' : 'EN';
+
+    // text nodes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (!t[key]) return;
+      // preserve inner HTML for elements with spans/em (like buttons with arrows)
+      if (el.tagName === 'BUTTON' || el.classList.contains('btn')) {
+        // strip trailing arrow if present, replace text
+        const arrow = el.querySelector('.arrow');
+        const val = t[key].replace(' →','');
+        el.textContent = val;
+        if (arrow) { el.appendChild(document.createTextNode(' ')); const sp = document.createElement('span'); sp.className='arrow'; sp.textContent='→'; el.appendChild(sp); }
+      } else {
+        el.textContent = t[key];
+      }
+    });
+
+    // placeholders
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.dataset.i18nPh;
+      if (t[key]) el.placeholder = t[key];
+    });
+
+    // select options
+    document.querySelectorAll('select option[data-i18n]').forEach(opt => {
+      const key = opt.dataset.i18n;
+      if (t[key]) opt.textContent = t[key];
+    });
+  }
+
+  function toggleLang() {
+    setLang(lang === 'en' ? 'es' : 'en');
+  }
+
   // ---- navbar + parallax ----
   const nav    = document.getElementById('topnav');
   const heroBg = document.getElementById('heroBg');
@@ -822,7 +1200,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade').forEach(el => io.observe(el));
-  requestAnimationFrame(() => document.querySelectorAll('.hero .fade, .spec-card').forEach(el => el.classList.add('in')));
+  requestAnimationFrame(() => document.querySelectorAll('.hero .fade').forEach(el => el.classList.add('in')));
 
   // ---- anime.js extras ----
   if (window.anime) {
@@ -845,12 +1223,12 @@
     const mIO = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
-        anime({ targets:'.model-row', translateX:[-44,0], opacity:[0,1], delay:anime.stagger(65), duration:900, easing:'easeOutExpo' });
+        anime({ targets:'.mcard', translateY:[40,0], opacity:[0,1], delay:anime.stagger(60), duration:900, easing:'easeOutExpo' });
         mIO.disconnect();
       });
     }, { threshold: 0.1 });
-    const mt = document.querySelector('.models-table');
-    if (mt) mIO.observe(mt);
+    const mg = document.querySelector('.models-grid');
+    if (mg) mIO.observe(mg);
 
     const pIO = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -890,8 +1268,8 @@
     clearTimeout(vinTimer);
     vinResult.className = 'vin-result';
     if (vin.length === 0) { vinResult.textContent = ''; return; }
-    if (vin.length < 17) { vinResult.textContent = `${vin.length} / 17 caracteres`; return; }
-    vinResult.textContent = 'Decodificando…';
+    if (vin.length < 17) { vinResult.textContent = `${vin.length} ${T[lang].vin_chars}`; return; }
+    vinResult.textContent = T[lang].vin_decoding;
     vinTimer = setTimeout(async () => {
       try {
         const res  = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`);
@@ -902,11 +1280,11 @@
           vinResult.textContent = `✦ ${year} ${make} ${model}`;
           vinResult.classList.add('ok');
         } else {
-          vinResult.textContent = 'VIN no reconocido — verifica el número';
+          vinResult.textContent = T[lang].vin_err_bad;
           vinResult.classList.add('err');
         }
       } catch {
-        vinResult.textContent = 'Sin conexión para decodificar';
+        vinResult.textContent = T[lang].vin_err_conn;
         vinResult.classList.add('err');
       }
     }, 400);
@@ -932,7 +1310,7 @@
     svg.style.transform = `rotate(${rot}deg)`;
     requestAnimationFrame(loop);
   })();
-  document.querySelectorAll('a,button,.btn,.svc,.model-row,.principle').forEach(el => {
+  document.querySelectorAll('a,button,.btn,.svc,.mcard,.principle').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
@@ -946,15 +1324,13 @@
     const success = document.getElementById('formSuccess');
     const btn     = form.querySelector('button[type="submit"]');
 
-    // loading state
     btn.disabled  = true;
-    btn.textContent = 'Enviando…';
+    btn.textContent = T[lang].sending;
 
     const data = new FormData(form);
-    // append decoded VIN label if available
     const vinEl = document.getElementById('vinResult');
     if (vinEl && vinEl.classList.contains('ok')) {
-      data.append('vin_decodificado', vinEl.textContent.replace('✦ ', '').trim());
+      data.append('vin_decoded', vinEl.textContent.replace('✦ ', '').trim());
     }
 
     try {
@@ -964,21 +1340,23 @@
       if (json.success) {
         form.style.display    = 'none';
         success.style.display = 'block';
+        // update success message in current language
+        const sp = success.querySelector('p');
+        if (sp) sp.innerHTML = T[lang].form_success.replace('\n','<br/>');
       } else {
-        throw new Error(json.message || 'Error al enviar');
+        throw new Error(json.message || 'Error');
       }
     } catch (err) {
-      btn.disabled    = false;
-      btn.innerHTML   = 'Enviar solicitud <span class="arrow">→</span>';
-      // show inline error
+      btn.disabled  = false;
+      btn.innerHTML = `${T[lang].form_submit.replace(' →','')} <span class="arrow">→</span>`;
       let errEl = document.getElementById('formError');
       if (!errEl) {
         errEl = document.createElement('p');
         errEl.id = 'formError';
-        errEl.style.cssText = 'font-family:var(--mono);font-size:10.5px;color:var(--crimson-s);letter-spacing:.1em;margin-top:12px';
+        errEl.style.cssText = 'font-family:var(--serif);font-size:10.5px;color:var(--crimson-s);letter-spacing:.1em;margin-top:12px';
         btn.parentNode.insertAdjacentElement('afterend', errEl);
       }
-      errEl.textContent = '⚠ No se pudo enviar. Intenta de nuevo o llámanos al (787) 344-6328.';
+      errEl.textContent = T[lang].send_err;
     }
   }
 </script>
