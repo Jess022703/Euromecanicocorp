@@ -712,6 +712,10 @@
       <div class="c-form-side">
         <div class="eyebrow" style="margin-bottom:28px">Formulario de solicitud</div>
         <form class="cform" id="cForm" onsubmit="handleForm(event)">
+          <input type="hidden" name="access_key" value="56275924-8b65-4997-88d7-b47c1f3bef2d">
+          <input type="hidden" name="subject" value="Nueva solicitud de cita — Euro Mecanico Corp">
+          <input type="hidden" name="from_name" value="Euro Mecanico Corp Website">
+          <input type="checkbox" name="botcheck" style="display:none">
           <div class="form-row">
             <div class="fg">
               <label>Nombre</label>
@@ -935,11 +939,47 @@
   document.addEventListener('mouseleave', () => { cursor.style.opacity='0'; dot.style.opacity='0'; });
   document.addEventListener('mouseenter', () => { cursor.style.opacity='1'; dot.style.opacity='1'; });
 
-  // ---- form submit ----
-  function handleForm(e) {
+  // ---- form submit — Web3Forms ----
+  async function handleForm(e) {
     e.preventDefault();
-    document.getElementById('cForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const form    = document.getElementById('cForm');
+    const success = document.getElementById('formSuccess');
+    const btn     = form.querySelector('button[type="submit"]');
+
+    // loading state
+    btn.disabled  = true;
+    btn.textContent = 'Enviando…';
+
+    const data = new FormData(form);
+    // append decoded VIN label if available
+    const vinEl = document.getElementById('vinResult');
+    if (vinEl && vinEl.classList.contains('ok')) {
+      data.append('vin_decodificado', vinEl.textContent.replace('✦ ', '').trim());
+    }
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      const json = await res.json();
+
+      if (json.success) {
+        form.style.display    = 'none';
+        success.style.display = 'block';
+      } else {
+        throw new Error(json.message || 'Error al enviar');
+      }
+    } catch (err) {
+      btn.disabled    = false;
+      btn.innerHTML   = 'Enviar solicitud <span class="arrow">→</span>';
+      // show inline error
+      let errEl = document.getElementById('formError');
+      if (!errEl) {
+        errEl = document.createElement('p');
+        errEl.id = 'formError';
+        errEl.style.cssText = 'font-family:var(--mono);font-size:10.5px;color:var(--crimson-s);letter-spacing:.1em;margin-top:12px';
+        btn.parentNode.insertAdjacentElement('afterend', errEl);
+      }
+      errEl.textContent = '⚠ No se pudo enviar. Intenta de nuevo o llámanos al (787) 344-6328.';
+    }
   }
 </script>
 
