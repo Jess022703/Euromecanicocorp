@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&family=Cinzel:wght@400;500;600&display=swap"
     rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <style>
@@ -1653,25 +1653,26 @@
     }
 
     .foot-name {
-      font-family: var(--serif);
-      font-size: clamp(42px, 6.5vw, 96px);
-      font-weight: 300;
-      line-height: .95;
-      letter-spacing: -.025em;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(36px, 5.5vw, 82px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: .08em;
       text-align: center;
     }
 
     .foot-name em {
-      font-style: italic;
-      font-weight: 500;
+      font-style: normal;
+      font-weight: 600;
       color: var(--crimson-s);
     }
 
     .foot-name .corp {
       color: var(--gold);
-      font-size: .55em;
+      font-size: .5em;
       font-style: normal;
-      letter-spacing: .18em;
+      font-weight: 400;
+      letter-spacing: .28em;
       vertical-align: middle;
     }
 
@@ -2286,6 +2287,10 @@
           <a href="#top">↑ Top</a>
         </nav>
       </div>
+      <div data-i18n="foot_disclaimer"
+        style="text-align: center; font-family: var(--serif); font-size: 11px; letter-spacing: 0.1em; color: var(--ink-mute); margin-top: 28px; padding: 16px 24px; border: 1px solid var(--hair); max-width: 760px; margin-left: auto; margin-right: auto; line-height: 1.85;">
+        Euro Mecanico Corp is an independent automotive workshop. We are not affiliated with, authorized by, or endorsed by Porsche AG or any of its subsidiaries. All brand names and model names are trademarks of their respective owners and are referenced for identification purposes only.
+      </div>
       <div class="foot-creator"
         style="text-align: center; font-family: var(--serif); font-size: 12px; letter-spacing: 0.14em; color: var(--ink-mute); margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);">
         <span data-i18n="foot_creator">Creado por :</span> <span style="color: var(--ink-dim);">Jesiel N. Jiménez
@@ -2344,8 +2349,8 @@
         abt_quote: '"We don\'t repair cars in general. We repair one type of car — and we do it well."',
         abt_img_tag: 'The workshop · Sabana Seca',
         abt_p1: 'Euro Mecanico Corp was born from a simple conviction: the Porsche owner deserves specialized, not generalist, attention. From our workshop in Sabana Seca, every vehicle receives the same level of care we would give our own.',
-        abt_p2: 'We use dedicated tools, OEM or certified-equivalent parts, and keep a detailed record of every service. No surprises, no sales pressure — just honest work, well documented, worthy of the shield we operate under.',
-        owner_role: 'Founder · Master Technician',
+        abt_p2: 'We use dedicated tools, OEM or certified-equivalent parts, and keep a detailed record of every service. No surprises, no sales pressure — just honest work, well documented, driven by a genuine passion for the Porsche platform.',
+        owner_role: 'Founder & Lead Specialist',
         owner_bio: 'Over 15 years focused exclusively on the Porsche platform. He personally attends every vehicle that enters the workshop.',
         prin_label: 'III · Why choose us',
         prin_title: 'Four non-negotiable principles.',
@@ -2405,6 +2410,7 @@
         form_success: "Request received.\nWe'll be in touch with you shortly.",
         foot_tag: 'Porsche Independent Specialists\nSabana Seca · Puerto Rico\n(787) 344-6328',
         foot_copy: '© 2026 Euro Mecanico Corp · All rights reserved',
+        foot_disclaimer: 'Euro Mecanico Corp is an independent automotive workshop. We are not affiliated with, authorized by, or endorsed by Porsche AG or any of its subsidiaries. All brand names and model names are trademarks of their respective owners and are referenced for identification purposes only.',
         foot_creator: 'Created by me:',
         vin_decoding: 'Decoding…',
         vin_chars: '/ 17 characters',
@@ -2451,8 +2457,8 @@
         abt_quote: '"No reparamos carros en general. Reparamos un solo tipo de carro — y lo hacemos bien."',
         abt_img_tag: 'El taller · Sabana Seca',
         abt_p1: 'Euro Mecanico Corp nació de una convicción sencilla: el propietario de un Porsche merece atención especializada, no generalista. Desde nuestro taller en Sabana Seca, cada vehículo recibe el mismo nivel de cuidado que le daríamos al nuestro.',
-        abt_p2: 'Trabajamos con herramientas dedicadas, piezas OEM o equivalentes certificados, y un registro detallado de cada intervención. Sin sorpresas, sin presión comercial — solo trabajo honesto, bien documentado, y digno del escudo bajo el que operamos.',
-        owner_role: 'Fundador · Master Technician',
+        abt_p2: 'Trabajamos con herramientas dedicadas, piezas OEM o equivalentes certificados, y un registro detallado de cada intervención. Sin sorpresas, sin presión comercial — solo trabajo honesto, bien documentado, impulsado por una genuina pasión por la plataforma Porsche.',
+        owner_role: 'Fundador y Especialista Principal',
         owner_bio: 'Más de 15 años enfocados exclusivamente en la plataforma Porsche. Atiende personalmente cada vehículo que entra al taller.',
         prin_label: 'III · Por qué elegirnos',
         prin_title: 'Cuatro principios no negociables.',
@@ -2512,6 +2518,7 @@
         form_success: 'Solicitud recibida.\nNos pondremos en contacto contigo pronto.',
         foot_tag: 'Porsche Independent Specialists\nSabana Seca · Puerto Rico\n(787) 344-6328',
         foot_copy: '© 2026 Euro Mecanico Corp · Todos los derechos reservados',
+        foot_disclaimer: 'Euro Mecanico Corp es un taller automotriz independiente. No estamos afiliados, autorizados ni respaldados por Porsche AG ni ninguna de sus subsidiarias. Todos los nombres de marcas y modelos son marcas registradas de sus respectivos propietarios y se mencionan únicamente con fines de identificación.',
         foot_creator: 'Creado por mi:',
         vin_decoding: 'Decodificando…',
         vin_chars: '/ 17 caracteres',
