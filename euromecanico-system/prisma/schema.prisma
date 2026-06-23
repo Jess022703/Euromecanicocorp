@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Client {
+  id        String    @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  vehicles  Vehicle[]
+  createdAt DateTime  @default(now())
+}
+
+model Vehicle {
+  id        String        @id @default(cuid())
+  vin       String        @unique
+  plate     String?
+  make      String
+  model     String
+  year      Int
+  color     String?
+  clientId  String
+  client    Client        @relation(fields: [clientId], references: [id])
+  orders    RepairOrder[]
+  createdAt DateTime      @default(now())
+}
+
+model RepairOrder {
+  id          String       @id @default(cuid())
+  vehicleId   String
+  vehicle     Vehicle      @relation(fields: [vehicleId], references: [id])
+  status      String       @default("RECEIVED")
+  description String
+  notes       String?
+  lineItems   LineItem[]
+  messages    MessageLog[]
+  qrToken     String       @unique @default(cuid())
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model LineItem {
+  id          String      @id @default(cuid())
+  orderId     String
+  order       RepairOrder @relation(fields: [orderId], references: [id])
+  type        String
+  description String
+  quantity    Float       @default(1)
+  unitPrice   Float
+  partNumber  String?
+}
+
+model MessageLog {
+  id      String      @id @default(cuid())
+  orderId String
+  order   RepairOrder @relation(fields: [orderId], references: [id])
+  channel String
+  body    String
+  sentAt  DateTime    @default(now())
+}
+
+model Part {
+  id             String  @id @default(cuid())
+  partNumber     String  @unique
+  description    String
+  brand          String?
+  location       String?
+  stock          Int     @default(0)
+  unitCost       Float
+  compatibleWith String?
+}
+
+model RepairGuide {
+  id        String   @id @default(cuid())
+  title     String
+  model     String
+  year      String?
+  category  String
+  steps     String
+  notes     String?
+  createdAt DateTime @default(now())
+}

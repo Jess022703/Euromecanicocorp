@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --porsche-red: #CC2229;
+  --shop-bg: #111112;
+  --shop-surface: #1a1a1c;
+  --shop-border: #2a2a2e;
+  --shop-muted: #71717a;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hidden {
+    scrollbar-width: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
