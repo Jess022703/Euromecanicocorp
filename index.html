@@ -7,21 +7,36 @@
   <meta name="description"
     content="Euro Mecanico Corp — Independent Porsche specialist workshop in Sabana Seca, Puerto Rico. Service, diagnostics and restoration since 2010.">
   <title>Euro Mecanico Corp · Porsche Specialists · Sabana Seca, PR</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFCQKKRHNZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-TFCQKKRHNZ');
+    window.addEventListener('load', () => {
+      const loadAnalytics = () => {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TFCQKKRHNZ';
+        document.head.appendChild(script);
+      };
+      setTimeout(() => {
+        if ('requestIdleCallback' in window) requestIdleCallback(loadAnalytics, { timeout: 2000 });
+        else loadAnalytics();
+      }, 8000);
+    }, { once: true });
   </script>
   <link rel="icon" type="image/png" href="assets/favicon-web.png">
   <link rel="apple-touch-icon" href="assets/favicon-web.png">
+  <link rel="preload" as="image" href="assets/gt3/orbit/f_001.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&family=Cinzel:wght@400;500;600&display=swap"
-    rel="stylesheet">
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,400&family=Cinzel:wght@400;500;600&display=swap">
+  </noscript>
   <style>
     :root {
       --bg: #0b0b0c;
@@ -2312,6 +2327,158 @@
     .fade.d4 {
       transition-delay: .4s;
     }
+
+    /* Mobile performance profile: keep the visual language while avoiding
+       expensive full-screen compositing during touch scrolling. */
+    @media (max-width:720px), (pointer:coarse) {
+      body::before {
+        display: none;
+      }
+
+      nav.top.scrolled {
+        background: rgba(11, 11, 12, .96);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      nav.top,
+      nav.top.scrolled {
+        flex-wrap: nowrap;
+        padding: 12px 18px;
+      }
+
+      .brand {
+        min-width: 0;
+        gap: 9px;
+      }
+
+      .brand-logo,
+      nav.top.scrolled .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-info .name {
+        font-size: 11px;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .brand-info .sub {
+        display: none;
+      }
+
+      .nav-right {
+        width: auto;
+        margin-left: auto;
+      }
+
+      .nav-right .btn {
+        display: none;
+      }
+
+      .lang-toggle {
+        padding: 6px 9px;
+      }
+
+      .hero {
+        touch-action: pan-y;
+      }
+
+      .hero-meta {
+        padding-top: 88px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-meta > :last-child {
+        display: none !important;
+      }
+
+      .hero-body {
+        padding-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 11.5vw, 48px);
+      }
+
+      .hero-sub {
+        margin-top: 20px;
+        font-size: 13.5px;
+        line-height: 1.62;
+      }
+
+      .hero-actions {
+        margin-top: 26px;
+      }
+
+      .hero-hint {
+        margin-top: 22px;
+      }
+
+      .hero-hint .key,
+      .hero-hint .keys-word {
+        display: none;
+      }
+
+      .hero-hint .swipe-word {
+        display: inline;
+      }
+
+      .hero-stats {
+        margin-top: 34px;
+        padding-top: 20px;
+      }
+
+      .stage {
+        height: 88svh;
+      }
+
+      .spec-list {
+        background: rgba(11, 11, 12, .88);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      .spec {
+        opacity: 1;
+        transform: none;
+      }
+
+      .stage .stage-foot .prog {
+        display: none;
+      }
+
+      .atmo video {
+        display: none;
+      }
+
+      .section,
+      footer {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 900px;
+      }
+
+      .fade {
+        transform: translateY(18px);
+        transition-duration: .55s;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 
@@ -3069,11 +3236,11 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script>
+    const MOBILE_PROFILE = window.matchMedia('(max-width: 720px), (pointer: coarse)').matches;
+    const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.classList.toggle('mobile-lite', MOBILE_PROFILE);
+
     // ==============================
     // TRANSLATIONS
     // ==============================
@@ -3378,7 +3545,15 @@
       if (heroBg && y < window.innerHeight * 1.4)
         heroBg.style.transform = `translate3d(0,${y * 0.28}px,0)`;
     }
-    window.addEventListener('scroll', onScroll, { passive: true });
+    let scrollFramePending = false;
+    window.addEventListener('scroll', () => {
+      if (scrollFramePending) return;
+      scrollFramePending = true;
+      requestAnimationFrame(() => {
+        onScroll();
+        scrollFramePending = false;
+      });
+    }, { passive: true });
     onScroll();
 
     // ---- GT3 opening frame sequences ----
@@ -3409,41 +3584,96 @@
         this.current = -1;
         this.onProgress = onProgress || (() => { });
         this.resize();
-        window.addEventListener('resize', () => { this.resize(); this.render(Math.max(this.current, 0), true); });
+        this.resizeFrame = 0;
+        window.addEventListener('resize', () => {
+          cancelAnimationFrame(this.resizeFrame);
+          this.resizeFrame = requestAnimationFrame(() => {
+            if (this.resize()) this.render(Math.max(this.current, 0), true);
+          });
+        }, { passive: true });
       }
 
       resize() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        const dpr = MOBILE_PROFILE ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
         const r = this.canvas.getBoundingClientRect();
-        this.canvas.width = Math.round(r.width * dpr);
-        this.canvas.height = Math.round(r.height * dpr);
+        const width = Math.max(1, Math.round(r.width * dpr));
+        const height = Math.max(1, Math.round(r.height * dpr));
+        if (this.canvas.width === width && this.canvas.height === height) return false;
+        this.canvas.width = width;
+        this.canvas.height = height;
         this.ctx.imageSmoothingQuality = 'high';
+        return true;
       }
 
-      load(concurrency = 2) {
+      async prepareFrame(img) {
+        if (!MOBILE_PROFILE || typeof window.createImageBitmap !== 'function') return img;
+
+        const targetWidth = this.canvas.width;
+        const targetHeight = this.canvas.height;
+        const imageWidth = img.naturalWidth || img.width;
+        const imageHeight = img.naturalHeight || img.height;
+        const imageRatio = imageWidth / imageHeight;
+        const targetRatio = targetWidth / targetHeight;
+        let sx = 0, sy = 0, sourceWidth = imageWidth, sourceHeight = imageHeight;
+
+        if (targetRatio > imageRatio) {
+          sourceHeight = imageWidth / targetRatio;
+          sy = (imageHeight - sourceHeight) / 2;
+        } else {
+          sourceWidth = imageHeight * targetRatio;
+          sx = (imageWidth - sourceWidth) / 2;
+        }
+
+        try {
+          return await createImageBitmap(
+            img,
+            Math.round(sx),
+            Math.round(sy),
+            Math.round(sourceWidth),
+            Math.round(sourceHeight),
+            {
+              resizeWidth: targetWidth,
+              resizeHeight: targetHeight,
+              resizeQuality: 'high'
+            }
+          );
+        } catch {
+          return img;
+        }
+      }
+
+      load(concurrency = 2, frameStep = 1) {
         if (this._loading) return this._loading;
+        const wanted = [];
+        for (let i = 0; i < this.seq.count; i += frameStep) wanted.push(i);
+        if (wanted[wanted.length - 1] !== this.seq.count - 1) wanted.push(this.seq.count - 1);
+        const pending = wanted.filter(i => !this.frames[i]);
+
         this._loading = new Promise(resolve => {
-          let next = 0, settled = this.frames.filter(Boolean).length;
+          if (!pending.length) {
+            resolve();
+            return;
+          }
+
+          let next = 0, settled = 0;
           const step = () => {
-            while (next < this.seq.count && this.frames[next]) next++;
-            if (settled >= this.seq.count) { resolve(); return; }
-            if (next >= this.seq.count) return;
-            const i = next++;
+            if (next >= pending.length) return;
+            const i = pending[next++];
             const img = new Image();
-            const done = ok => {
+            const done = async ok => {
               if (ok) {
-                this.frames[i] = img;
+                this.frames[i] = await this.prepareFrame(img);
                 this.loaded++;
                 this.onProgress(this.loaded / this.seq.count);
                 if (this.current === -1 && i === 0) this.render(0, true);
               }
-              if (++settled === this.seq.count) resolve(); else step();
+              if (++settled === pending.length) resolve(); else step();
             };
             img.onload = () => done(true);
             img.onerror = () => done(false);
             img.src = frameSrc(this.seq, i);
           };
-          for (let k = 0; k < concurrency; k++) step();
+          for (let k = 0; k < Math.min(concurrency, pending.length); k++) step();
         });
         return this._loading;
       }
@@ -3452,14 +3682,14 @@
         if (this.frames[index]) return Promise.resolve(this.frames[index]);
         return new Promise(resolve => {
           const img = new Image();
-          const done = ok => {
+          const done = async ok => {
             if (ok) {
-              this.frames[index] = img;
+              this.frames[index] = await this.prepareFrame(img);
               this.loaded++;
               this.onProgress(this.loaded / this.seq.count);
               this.render(index, true);
             }
-            resolve(ok ? img : null);
+            resolve(ok ? this.frames[index] : null);
           };
           img.onload = () => done(true);
           img.onerror = () => done(false);
@@ -3499,25 +3729,35 @@
         document.querySelectorAll('.hero .fade').forEach(el => el.classList.add('in'));
       };
 
-      orbitSeq = new FrameSequence(orbitCanvas, SEQ.orbit, p => {
-        const pct = Math.round(p * 100);
-        const veilFill = document.getElementById('veilFill');
-        const veilPct = document.getElementById('veilPct');
-        if (veilFill) veilFill.style.transform = `scaleX(${p})`;
-        if (veilPct) veilPct.textContent = pct + '%';
-        if (p > 0) dropVeil();
-      });
-      engineSeq = new FrameSequence(engineCanvas, SEQ.engine);
-      assemblySeq = new FrameSequence(assemblyCanvas, SEQ.assembly);
+      const getOrbitSequence = () => {
+        if (!orbitSeq) {
+          orbitSeq = new FrameSequence(orbitCanvas, SEQ.orbit, p => {
+            const pct = Math.round(p * 100);
+            const veilFill = document.getElementById('veilFill');
+            const veilPct = document.getElementById('veilPct');
+            if (veilFill) veilFill.style.transform = `scaleX(${p})`;
+            if (veilPct) veilPct.textContent = pct + '%';
+            if (p > 0) dropVeil();
+          });
+        }
+        return orbitSeq;
+      };
+
+      if (!MOBILE_PROFILE) {
+        getOrbitSequence();
+        engineSeq = new FrameSequence(engineCanvas, SEQ.engine);
+        assemblySeq = new FrameSequence(assemblyCanvas, SEQ.assembly);
+      }
 
       let orbitFullLoadStarted = false;
       const loadOrbitSequence = () => {
-        if (orbitFullLoadStarted) return;
+        if (orbitFullLoadStarted || REDUCED_MOTION) return;
         orbitFullLoadStarted = true;
-        orbitSeq.load(2);
+        getOrbitSequence().load(2, MOBILE_PROFILE ? 4 : 1);
       };
 
-      orbitSeq.loadFrame(0).then(() => {
+      const firstHeroFrame = MOBILE_PROFILE ? Promise.resolve() : orbitSeq.loadFrame(0);
+      firstHeroFrame.then(() => {
         dropVeil();
       });
       setTimeout(dropVeil, 12000);
@@ -3526,72 +3766,140 @@
       const lazyLoad = new IntersectionObserver(entries => {
         entries.forEach(en => {
           if (!en.isIntersecting) return;
-          if (en.target.id === 'engine') engineSeq.load(4).then(() => engineSeq.renderProgress(stageProgress.engine));
-          if (en.target.id === 'assembly') assemblySeq.load(4).then(() => assemblySeq.renderProgress(stageProgress.assembly));
+          if (en.target.id === 'engine') {
+            if (!engineSeq) engineSeq = new FrameSequence(engineCanvas, SEQ.engine);
+            const load = MOBILE_PROFILE ? engineSeq.loadFrame(0) : engineSeq.load(4);
+            load.then(() => engineSeq.renderProgress(stageProgress.engine));
+          }
+          if (en.target.id === 'assembly') {
+            if (!assemblySeq) assemblySeq = new FrameSequence(assemblyCanvas, SEQ.assembly);
+            const load = MOBILE_PROFILE ? assemblySeq.loadFrame(0) : assemblySeq.load(4);
+            load.then(() => assemblySeq.renderProgress(stageProgress.assembly));
+          }
           lazyLoad.unobserve(en.target);
         });
-      }, { rootMargin: '400px 0px 0px 0px', threshold: 0.01 });
+      }, { rootMargin: MOBILE_PROFILE ? '180px 0px' : '400px 0px 0px 0px', threshold: 0.01 });
       lazyLoad.observe(document.getElementById('engine'));
       lazyLoad.observe(document.getElementById('assembly'));
 
       let orbitPos = 0;
       let orbitVel = 0;
-      let idleSpin = true;
-      const stopIdle = () => {
-        idleSpin = false;
+      let orbitFrame = 0;
+      const heroEl = document.querySelector('.hero');
+
+      const queueOrbitFrame = () => {
+        if (!orbitFrame) orbitFrame = requestAnimationFrame(orbitTick);
+      };
+
+      const startOrbit = () => {
         loadOrbitSequence();
+        queueOrbitFrame();
       };
 
       document.addEventListener('keydown', e => {
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-          stopIdle();
+          startOrbit();
           orbitVel += (e.key === 'ArrowRight' ? 1 : -1) * 0.9;
           const k = document.getElementById(e.key === 'ArrowRight' ? 'keyR' : 'keyL');
           if (k) {
             k.classList.add('active');
             setTimeout(() => k.classList.remove('active'), 180);
           }
+          queueOrbitFrame();
         }
       });
 
-      const heroEl = document.querySelector('.hero');
-      let dragging = false, lastX = 0;
-      heroEl.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; stopIdle(); });
+      let dragging = false;
+      let horizontalDrag = false;
+      let lastX = 0;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      heroEl.addEventListener('pointerdown', e => {
+        dragging = true;
+        horizontalDrag = !MOBILE_PROFILE;
+        lastX = dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        if (horizontalDrag) startOrbit();
+      });
       heroEl.addEventListener('wheel', e => {
         const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
         if (!dx) return;
         e.preventDefault();
-        stopIdle();
+        startOrbit();
         orbitVel += dx * 0.018;
         const k = document.getElementById(dx > 0 ? 'keyR' : 'keyL');
         if (k) { k.classList.add('active'); clearTimeout(k._t); k._t = setTimeout(() => k.classList.remove('active'), 180); }
+        queueOrbitFrame();
       }, { passive: false });
       window.addEventListener('pointermove', e => {
         if (!dragging) return;
+
+        if (MOBILE_PROFILE && !horizontalDrag) {
+          const totalX = e.clientX - dragStartX;
+          const totalY = e.clientY - dragStartY;
+          if (Math.abs(totalY) > 10 && Math.abs(totalY) > Math.abs(totalX)) {
+            dragging = false;
+            return;
+          }
+          if (Math.abs(totalX) < 10 || Math.abs(totalX) <= Math.abs(totalY) * 1.15) return;
+          horizontalDrag = true;
+          startOrbit();
+        }
+
         const dx = e.clientX - lastX;
         lastX = e.clientX;
         orbitVel += dx * 0.045;
+        queueOrbitFrame();
       });
-      window.addEventListener('pointerup', () => dragging = false);
+      window.addEventListener('pointerup', () => {
+        dragging = false;
+        horizontalDrag = false;
+        queueOrbitFrame();
+      });
+      window.addEventListener('pointercancel', () => {
+        dragging = false;
+        horizontalDrag = false;
+      });
 
-      (function orbitTick() {
-        requestAnimationFrame(orbitTick);
-        if (document.hidden) return;
+      function orbitTick() {
+        orbitFrame = 0;
+        if (document.hidden || (!dragging && Math.abs(orbitVel) < 0.015)) return;
         const r = heroEl.getBoundingClientRect();
         if (r.bottom <= 0 || r.top >= innerHeight) return;
-        if (idleSpin && !orbitFullLoadStarted) return;
-        if (idleSpin) orbitVel += 0.028;
         orbitPos += orbitVel;
-        orbitVel *= 0.88;
+        orbitVel *= 0.86;
         const n = SEQ.orbit.count;
         orbitPos = ((orbitPos % n) + n) % n;
         orbitSeq.render(orbitPos);
-      })();
+        if (dragging || Math.abs(orbitVel) >= 0.015) queueOrbitFrame();
+      }
 
-      if (window.gsap && window.ScrollTrigger) {
+      const loadScript = src => new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+
+      const initDesktopMotion = async () => {
+        if (MOBILE_PROFILE || REDUCED_MOTION) return;
+
+        try {
+          await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js');
+          await Promise.all([
+            loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js'),
+            loadScript('https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js')
+          ]);
+        } catch {
+          return;
+        }
+
+        if (!window.gsap || !window.ScrollTrigger) return;
         gsap.registerPlugin(ScrollTrigger);
         if (window.Lenis) {
-          const lenis = new Lenis({ lerp: 0.2, smoothWheel: true, wheelMultiplier: 1.4, syncTouch: true });
+          const lenis = new Lenis({ lerp: 0.18, smoothWheel: true, wheelMultiplier: 1.15 });
           lenis.on('scroll', ScrollTrigger.update);
           gsap.ticker.add(t => lenis.raf(t * 1000));
           gsap.ticker.lagSmoothing(0);
@@ -3603,7 +3911,7 @@
           end: '+=250%',
           pin: true,
           anticipatePin: 1,
-          scrub: true,
+          scrub: 0.18,
           onUpdate: self => {
             stageProgress.engine = self.progress;
             engineSeq.renderProgress(self.progress);
@@ -3618,7 +3926,7 @@
           end: '+=300%',
           pin: true,
           anticipatePin: 1,
-          scrub: true,
+          scrub: 0.18,
           onUpdate: self => {
             stageProgress.assembly = self.progress;
             assemblySeq.renderProgress(self.progress);
@@ -3631,26 +3939,25 @@
             });
           }
         });
+        ScrollTrigger.refresh();
+      };
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initDesktopMotion, { timeout: 1200 });
+      } else {
+        setTimeout(initDesktopMotion, 50);
       }
 
       const atmoVideo = document.getElementById('atmoVideo');
-      if (atmoVideo) {
+      if (atmoVideo && !MOBILE_PROFILE && !REDUCED_MOTION) {
         const playAtmo = () => atmoVideo.play().catch(() => { });
         atmoVideo.muted = true;
         atmoVideo.setAttribute('muted', '');
         atmoVideo.setAttribute('playsinline', '');
-
-        if (window.ScrollTrigger) {
-          ScrollTrigger.create({
-            trigger: '#atmosphere',
-            start: 'top 80%',
-            end: 'bottom top',
-            onEnter: playAtmo,
-            onEnterBack: playAtmo,
-            onLeave: () => atmoVideo.pause(),
-            onLeaveBack: () => atmoVideo.pause(),
-          });
-        }
+        const videoObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => entry.isIntersecting ? playAtmo() : atmoVideo.pause());
+        }, { rootMargin: '15% 0px', threshold: 0.01 });
+        videoObserver.observe(atmoVideo);
       }
     }
 
@@ -3681,45 +3988,6 @@
       lazyBgs.forEach(el => bgIO.observe(el));
     } else {
       lazyBgs.forEach(loadLazyBg);
-    }
-
-    // ---- anime.js extras ----
-    if (window.anime) {
-      anime({
-        targets: '.hero-corner',
-        scale: [0.3, 1], opacity: [0, 0.6],
-        delay: anime.stagger(100, { start: 450 }),
-        duration: 1400, easing: 'easeOutExpo'
-      });
-      const svcIO = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-          anime({ targets: '.svc', translateY: [28, 0], scale: [.97, 1], opacity: [0, 1], delay: anime.stagger(75), duration: 900, easing: 'easeOutExpo' });
-          svcIO.disconnect();
-        });
-      }, { threshold: 0.15 });
-      const sg = document.querySelector('.services-grid');
-      if (sg) svcIO.observe(sg);
-
-      const mIO = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-          anime({ targets: '.mcard', translateY: [40, 0], opacity: [0, 1], delay: anime.stagger(60), duration: 900, easing: 'easeOutExpo' });
-          mIO.disconnect();
-        });
-      }, { threshold: 0.1 });
-      const mg = document.querySelector('.models-grid');
-      if (mg) mIO.observe(mg);
-
-      const pIO = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-          anime({ targets: '.principle .numeral', scale: [0.3, 1], rotate: ['-10deg', '0deg'], opacity: [0, .7], delay: anime.stagger(110), duration: 800, easing: 'spring(1,80,10,0)' });
-          pIO.disconnect();
-        });
-      }, { threshold: 0.2 });
-      const pg = document.querySelector('.principles-grid');
-      if (pg) pIO.observe(pg);
     }
 
     // ---- counters ----
@@ -3774,29 +4042,45 @@
     // ---- custom cursor ----
     const cursor = document.getElementById('cursor');
     const dot = document.getElementById('cursorDot');
-    const svg = cursor.querySelector('svg');
-    let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
-    let rot = 0, tRot = 0, lastX = cx, idle;
-    window.addEventListener('mousemove', e => {
-      tx = e.clientX; ty = e.clientY;
-      dot.style.transform = `translate3d(${tx}px,${ty}px,0) translate(-50%,-50%)`;
-      tRot += (tx - lastX) * 0.35;
-      lastX = tx;
-      clearTimeout(idle);
-      idle = setTimeout(() => { tRot = Math.round(tRot / 360) * 360; }, 160);
-    });
-    (function loop() {
-      cx += (tx - cx) * .18; cy += (ty - cy) * .18; rot += (tRot - rot) * .1;
-      cursor.style.transform = `translate3d(${cx}px,${cy}px,0) translate(-50%,-50%)`;
-      svg.style.transform = `rotate(${rot}deg)`;
-      requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a,button,.btn,.svc,.mcard,.principle').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
-    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; dot.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; dot.style.opacity = '1'; });
+    if (!MOBILE_PROFILE && !REDUCED_MOTION && cursor && dot) {
+      const svg = cursor.querySelector('svg');
+      let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
+      let rot = 0, tRot = 0, lastX = cx, idle, cursorFrame = 0;
+      const cursorLoop = () => {
+        cursorFrame = 0;
+        cx += (tx - cx) * .18;
+        cy += (ty - cy) * .18;
+        rot += (tRot - rot) * .1;
+        cursor.style.transform = `translate3d(${cx}px,${cy}px,0) translate(-50%,-50%)`;
+        svg.style.transform = `rotate(${rot}deg)`;
+        if (Math.abs(tx - cx) > .1 || Math.abs(ty - cy) > .1 || Math.abs(tRot - rot) > .1) {
+          cursorFrame = requestAnimationFrame(cursorLoop);
+        }
+      };
+      const queueCursorFrame = () => {
+        if (!cursorFrame) cursorFrame = requestAnimationFrame(cursorLoop);
+      };
+
+      window.addEventListener('mousemove', e => {
+        tx = e.clientX;
+        ty = e.clientY;
+        dot.style.transform = `translate3d(${tx}px,${ty}px,0) translate(-50%,-50%)`;
+        tRot += (tx - lastX) * 0.35;
+        lastX = tx;
+        clearTimeout(idle);
+        idle = setTimeout(() => {
+          tRot = Math.round(tRot / 360) * 360;
+          queueCursorFrame();
+        }, 160);
+        queueCursorFrame();
+      }, { passive: true });
+      document.querySelectorAll('a,button,.btn,.svc,.mcard,.principle').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+      document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; dot.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; dot.style.opacity = '1'; });
+    }
 
     // ---- form submit — Web3Forms ----
     async function handleForm(e) {
