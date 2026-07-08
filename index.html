@@ -51,7 +51,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     body {
@@ -3526,11 +3526,11 @@
       const lazyLoad = new IntersectionObserver(entries => {
         entries.forEach(en => {
           if (!en.isIntersecting) return;
-          if (en.target.id === 'engine') engineSeq.load(6).then(() => engineSeq.renderProgress(stageProgress.engine));
-          if (en.target.id === 'assembly') assemblySeq.load(6).then(() => assemblySeq.renderProgress(stageProgress.assembly));
+          if (en.target.id === 'engine') engineSeq.load(4).then(() => engineSeq.renderProgress(stageProgress.engine));
+          if (en.target.id === 'assembly') assemblySeq.load(4).then(() => assemblySeq.renderProgress(stageProgress.assembly));
           lazyLoad.unobserve(en.target);
         });
-      }, { rootMargin: '800px 0px 0px 0px', threshold: 0.01 });
+      }, { rootMargin: '400px 0px 0px 0px', threshold: 0.01 });
       lazyLoad.observe(document.getElementById('engine'));
       lazyLoad.observe(document.getElementById('assembly'));
 
@@ -3603,7 +3603,7 @@
           end: '+=250%',
           pin: true,
           anticipatePin: 1,
-          scrub: 0.15,
+          scrub: true,
           onUpdate: self => {
             stageProgress.engine = self.progress;
             engineSeq.renderProgress(self.progress);
@@ -3618,7 +3618,7 @@
           end: '+=300%',
           pin: true,
           anticipatePin: 1,
-          scrub: 0.15,
+          scrub: true,
           onUpdate: self => {
             stageProgress.assembly = self.progress;
             assemblySeq.renderProgress(self.progress);
