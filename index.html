@@ -746,6 +746,229 @@
       }
     }
 
+    /* ---- GT3 experience ---- */
+    .gt3-experience {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--hair-red);
+      border-bottom: 1px solid var(--hair-red);
+      background:
+        linear-gradient(180deg, rgba(11, 11, 12, .98) 0%, rgba(17, 17, 19, .86) 48%, rgba(11, 11, 12, .98) 100%),
+        url('assets/gt3/hero.png') center / cover no-repeat;
+    }
+
+    .gt3-experience::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(176, 30, 40, .38) 0 1px, transparent 1px 100%),
+        linear-gradient(180deg, rgba(212, 178, 84, .12) 0 1px, transparent 1px 100%);
+      background-size: 88px 88px;
+      opacity: .14;
+      pointer-events: none;
+    }
+
+    .gt3-shell {
+      position: relative;
+      z-index: 1;
+      padding: clamp(76px, 10vw, 132px) 0;
+    }
+
+    .gt3-lead {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: clamp(28px, 5vw, 76px);
+      align-items: end;
+    }
+
+    .gt3-copy h2 {
+      font-size: clamp(38px, 5.5vw, 86px);
+      line-height: .98;
+      font-weight: 300;
+      letter-spacing: -.025em;
+      max-width: 10ch;
+    }
+
+    .gt3-copy h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .gt3-copy p {
+      color: var(--ink-dim);
+      font-size: 14.5px;
+      line-height: 1.75;
+      max-width: 54ch;
+      margin-top: 24px;
+    }
+
+    .gt3-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+      margin-top: 34px;
+    }
+
+    .gt3-spec {
+      padding: 18px 20px 18px 0;
+    }
+
+    .gt3-spec+.gt3-spec {
+      border-left: 1px solid var(--hair);
+      padding-left: 20px;
+    }
+
+    .gt3-spec strong {
+      display: block;
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .gt3-spec span {
+      display: block;
+      color: var(--ink-mute);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .gt3-video-frame {
+      position: relative;
+      min-height: clamp(360px, 54vw, 640px);
+      overflow: hidden;
+      border-left: 1px solid var(--hair-gold);
+      border-bottom: 1px solid var(--hair-gold);
+      background: #050506 url('assets/gt3/hero.png') center / cover no-repeat;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .42);
+    }
+
+    .gt3-video-frame video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.9) contrast(1.08);
+    }
+
+    .gt3-video-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11, 11, 12, .1), rgba(11, 11, 12, .82)),
+        linear-gradient(90deg, rgba(176, 30, 40, .2), transparent 38%);
+      pointer-events: none;
+    }
+
+    .gt3-video-tag {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 18px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--ink);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .gt3-scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 2px;
+    }
+
+    .gt3-scene {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border-top: 1px solid var(--hair);
+    }
+
+    .gt3-scene img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+      filter: grayscale(.2) brightness(.64);
+      transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s;
+    }
+
+    .gt3-scene:hover img {
+      transform: scale(1.05);
+      filter: grayscale(.04) brightness(.76);
+    }
+
+    .gt3-scene figcaption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+    }
+
+    .gt3-scene::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(11, 11, 12, .94), rgba(11, 11, 12, .08) 62%);
+      pointer-events: none;
+    }
+
+    .gt3-scene b {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .18em;
+      color: var(--crimson-s);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .gt3-scene span {
+      display: block;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    @media (max-width:980px) {
+      .gt3-lead,
+      .gt3-scenes {
+        grid-template-columns: 1fr;
+      }
+
+      .gt3-copy h2 {
+        max-width: 13ch;
+      }
+    }
+
+    @media (max-width:560px) {
+      .gt3-specs {
+        grid-template-columns: 1fr;
+      }
+
+      .gt3-spec+.gt3-spec {
+        border-left: 0;
+        border-top: 1px solid var(--hair);
+        padding-left: 0;
+      }
+
+      .gt3-video-tag {
+        flex-direction: column;
+      }
+    }
+
     /* ---- services ---- */
     .services-grid {
       display: grid;
@@ -1713,7 +1936,7 @@
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#about" data-i18n="nav_about">About</a>
       <a href="#models" data-i18n="nav_models">Models</a>
-      <a href="gt3.html" data-i18n="nav_gt3">GT3</a>
+      <a href="#gt3-experience" data-i18n="nav_gt3">GT3</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
@@ -1761,7 +1984,7 @@
           <div class="l" data-i18n="stat1">Years focused</div>
         </div>
         <div class="stat">
-          <div class="n"><span class="count" data-target="6">0</span></div>
+          <div class="n"><span class="count" data-target="7">0</span></div>
           <div class="l" data-i18n="stat2">Models served</div>
         </div>
         <div class="stat">
@@ -1775,6 +1998,68 @@
       </div>
     </div>
   </header>
+
+  <!-- GT3 EXPERIENCE -->
+  <section class="gt3-experience" id="gt3-experience">
+    <div class="wrap gt3-shell">
+      <div class="gt3-lead">
+        <div class="gt3-copy fade">
+          <div class="label" data-i18n="gt3_label">GT3 · Integrated experience</div>
+          <h2 data-i18n="gt3_title">Track-bred <em>precision</em> inside the workshop.</h2>
+          <p data-i18n="gt3_copy">A closer look at the discipline behind Porsche performance: controlled teardown,
+            clean assembly, diagnostic patience and the kind of detail that protects a car when it is driven hard.</p>
+          <div class="gt3-specs">
+            <div class="gt3-spec">
+              <strong>9k</strong>
+              <span data-i18n="gt3_spec1">rpm character</span>
+            </div>
+            <div class="gt3-spec">
+              <strong>4.0</strong>
+              <span data-i18n="gt3_spec2">flat-six focus</span>
+            </div>
+            <div class="gt3-spec">
+              <strong>1:1</strong>
+              <span data-i18n="gt3_spec3">specialist care</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gt3-video-frame fade d1">
+          <video id="gt3InlineVideo" autoplay muted loop playsinline preload="auto" poster="assets/gt3/hero.png">
+            <source src="assets/gt3/atmosphere.mp4" type="video/mp4">
+          </video>
+          <div class="gt3-video-tag">
+            <span data-i18n="gt3_video_left">GT3 atmosphere</span>
+            <span data-i18n="gt3_video_right">Service without shortcuts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gt3-scenes fade d2">
+        <figure class="gt3-scene">
+          <img src="assets/gt3/orbit/f_053.jpg" alt="Porsche GT3 profile studio view" loading="lazy">
+          <figcaption>
+            <b data-i18n="gt3_scene1_k">Inspection</b>
+            <span data-i18n="gt3_scene1">Every noise, leak and fault starts with a documented baseline.</span>
+          </figcaption>
+        </figure>
+        <figure class="gt3-scene">
+          <img src="assets/gt3/engine/f_061.jpg" alt="Porsche GT3 engine service detail" loading="lazy">
+          <figcaption>
+            <b data-i18n="gt3_scene2_k">Engine</b>
+            <span data-i18n="gt3_scene2">Flat-six work treated with factory-level discipline.</span>
+          </figcaption>
+        </figure>
+        <figure class="gt3-scene">
+          <img src="assets/gt3/assembly/f_119.jpg" alt="Porsche GT3 assembly detail" loading="lazy">
+          <figcaption>
+            <b data-i18n="gt3_scene3_k">Assembly</b>
+            <span data-i18n="gt3_scene3">Clean parts, correct sequence and no mystery work.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section class="section" id="services">
@@ -2215,6 +2500,7 @@
           <a href="#services" data-i18n="nav_services">Services</a>
           <a href="#about" data-i18n="nav_about">About</a>
           <a href="#models" data-i18n="nav_models">Models</a>
+          <a href="#gt3-experience" data-i18n="nav_gt3">GT3</a>
           <a href="#contact" data-i18n="nav_contact">Contact</a>
           <a href="#top">↑ Top</a>
         </nav>
@@ -2260,6 +2546,20 @@
         stat2: 'Models served',
         stat3: 'Direct attention',
         stat4: 'Sabana Seca',
+        gt3_label: 'GT3 · Integrated experience',
+        gt3_title: 'Track-bred <em>precision</em> inside the workshop.',
+        gt3_copy: 'A closer look at the discipline behind Porsche performance: controlled teardown, clean assembly, diagnostic patience and the kind of detail that protects a car when it is driven hard.',
+        gt3_spec1: 'rpm character',
+        gt3_spec2: 'flat-six focus',
+        gt3_spec3: 'specialist care',
+        gt3_video_left: 'GT3 atmosphere',
+        gt3_video_right: 'Service without shortcuts',
+        gt3_scene1_k: 'Inspection',
+        gt3_scene1: 'Every noise, leak and fault starts with a documented baseline.',
+        gt3_scene2_k: 'Engine',
+        gt3_scene2: 'Flat-six work treated with factory-level discipline.',
+        gt3_scene3_k: 'Assembly',
+        gt3_scene3: 'Clean parts, correct sequence and no mystery work.',
         svc_label: 'I · Services',
         svc_title: 'Complete service,\u00a0no shortcuts.',
         svc_kicker: 'Every service is performed to manufacturer specifications and tolerances. Pre-inspection, documented diagnosis and a clear explanation before any work begins.',
@@ -2369,6 +2669,20 @@
         stat2: 'Modelos atendidos',
         stat3: 'Atención directa',
         stat4: 'Sabana Seca',
+        gt3_label: 'GT3 · Experiencia integrada',
+        gt3_title: 'Precisión de <em>pista</em> dentro del taller.',
+        gt3_copy: 'Una mirada cercana a la disciplina detrás del rendimiento Porsche: desmontaje controlado, ensamblaje limpio, paciencia diagnóstica y el detalle que protege un auto cuando se maneja fuerte.',
+        gt3_spec1: 'carácter rpm',
+        gt3_spec2: 'enfoque flat-six',
+        gt3_spec3: 'cuidado especialista',
+        gt3_video_left: 'Atmósfera GT3',
+        gt3_video_right: 'Servicio sin atajos',
+        gt3_scene1_k: 'Inspección',
+        gt3_scene1: 'Todo ruido, fuga y falla comienza con una base documentada.',
+        gt3_scene2_k: 'Motor',
+        gt3_scene2: 'Trabajo flat-six tratado con disciplina de fábrica.',
+        gt3_scene3_k: 'Ensamblaje',
+        gt3_scene3: 'Piezas limpias, secuencia correcta y cero trabajo misterioso.',
         svc_label: 'I · Servicios',
         svc_title: 'Servicio integral,\u00a0sin atajos.',
         svc_kicker: 'Cada servicio se realiza bajo las especificaciones y tolerancias del fabricante. Inspección previa, diagnóstico documentado y explicación clara antes de cualquier intervención.',
@@ -2482,6 +2796,8 @@
           const val = t[key].replace(' →', '');
           el.textContent = val;
           if (arrow) { el.appendChild(document.createTextNode(' ')); const sp = document.createElement('span'); sp.className = 'arrow'; sp.textContent = '→'; el.appendChild(sp); }
+        } else if (t[key].includes('<')) {
+          el.innerHTML = t[key];
         } else {
           el.textContent = t[key];
         }
@@ -2580,6 +2896,27 @@
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('.count').forEach(el => cIO.observe(el));
+
+    // ---- integrated GT3 video ----
+    const gt3InlineVideo = document.getElementById('gt3InlineVideo');
+    if (gt3InlineVideo) {
+      const playGt3 = () => gt3InlineVideo.play().catch(() => { });
+      gt3InlineVideo.muted = true;
+      gt3InlineVideo.setAttribute('muted', '');
+      gt3InlineVideo.setAttribute('playsinline', '');
+      gt3InlineVideo.addEventListener('loadeddata', playGt3, { once: true });
+
+      const gt3VideoIO = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            playGt3();
+          } else {
+            gt3InlineVideo.pause();
+          }
+        });
+      }, { threshold: 0.25 });
+      gt3VideoIO.observe(gt3InlineVideo);
+    }
 
     // ---- VIN decoder (NHTSA API) ----
     const vinInput = document.getElementById('vinInput');
