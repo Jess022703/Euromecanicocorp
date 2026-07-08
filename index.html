@@ -395,6 +395,31 @@
       }
     }
 
+    @media (max-width:420px) {
+      nav.top {
+        flex-wrap: wrap;
+        row-gap: 10px;
+      }
+
+      .brand-info .sub {
+        display: none;
+      }
+
+      .brand-info .name {
+        font-size: 11.5px;
+      }
+
+      .brand-logo {
+        width: 46px;
+        height: 46px;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
     .brand {
       display: flex;
       align-items: center;
@@ -994,6 +1019,12 @@
     .hero-meta {
       margin-bottom: auto;
       padding-top: 132px;
+    }
+
+    @media (max-width:420px) {
+      .hero-meta {
+        padding-top: 168px;
+      }
     }
 
     .hero-body {
@@ -2337,7 +2368,7 @@
     <canvas id="orbitCanvas"></canvas>
 
     <div class="wrap hero-meta fade">
-      <div class="loc">Sabana Seca Â· Puerto Rico</div>
+      <div class="loc">Sabana Seca · Puerto Rico</div>
       <div class="mid"><span class="bar"></span><span data-i18n="hero_meta_mid">Independent Porsche
           Specialists</span><span class="bar"></span></div>
       <div style="color:var(--crimson-s);display:flex;align-items:center;gap:9px">
@@ -2357,12 +2388,12 @@
         diagnostics and restoration of Porsche vehicles. Fifteen years of focused expertise under one roof, serving
         discerning owners throughout Puerto Rico.</p>
       <div class="hero-actions fade d3">
-        <a href="#contact" class="btn btn-red" data-i18n="hero_cta1">Book a visit <span class="arrow">â†’</span></a>
+        <a href="#contact" class="btn btn-red" data-i18n="hero_cta1">Book a visit <span class="arrow">→</span></a>
         <a href="#services" class="btn" data-i18n="hero_cta2">Our services</a>
       </div>
       <div class="hero-hint fade d3" id="heroHint">
-        <span class="key" id="keyL">â†</span>
-        <span class="key" id="keyR">â†’</span>
+        <span class="key" id="keyL">←</span>
+        <span class="key" id="keyR">→</span>
         <span><span class="keys-word">Scroll sideways or drag</span><span class="swipe-word">Swipe</span> to rotate the
           car</span>
       </div>
@@ -2401,7 +2432,7 @@
     </div>
     <div class="stage-foot">
       <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%">
-        <span>4.0 L Â· Naturally aspirated</span>
+        <span>4.0 L · Naturally aspirated</span>
         <div class="prog"><span>Scroll</span>
           <div class="prog-track">
             <div class="prog-fill" id="engineProg"></div>
@@ -2428,7 +2459,7 @@
       </div>
       <div class="spec">
         <div class="s-num">02</div>
-        <div class="s-val">510 CV Â· <em>9,000</em> RPM</div>
+        <div class="s-val">510 CV · <em>9,000</em> RPM</div>
       </div>
       <div class="spec">
         <div class="s-num">03</div>
@@ -2441,7 +2472,7 @@
     </div>
     <div class="stage-foot">
       <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%">
-        <span>Disassembly Â· Reassembly</span>
+        <span>Disassembly · Reassembly</span>
         <div class="prog"><span>Scroll</span>
           <div class="prog-track">
             <div class="prog-fill" id="assemblyProg"></div>
@@ -3560,7 +3591,7 @@
       if (window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
         if (window.Lenis) {
-          const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+          const lenis = new Lenis({ lerp: 0.2, smoothWheel: true, wheelMultiplier: 1.4, syncTouch: true });
           lenis.on('scroll', ScrollTrigger.update);
           gsap.ticker.add(t => lenis.raf(t * 1000));
           gsap.ticker.lagSmoothing(0);
