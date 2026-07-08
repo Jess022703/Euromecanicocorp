@@ -15,14 +15,13 @@
     gtag('js', new Date());
     gtag('config', 'G-TFCQKKRHNZ');
   </script>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="assets/favicon-web.png">
+  <link rel="apple-touch-icon" href="assets/favicon-web.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&family=Cinzel:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <style>
     :root {
       --bg: #0b0b0c;
@@ -754,7 +753,7 @@
       border-bottom: 1px solid var(--hair-red);
       background:
         linear-gradient(180deg, rgba(11, 11, 12, .98) 0%, rgba(17, 17, 19, .86) 48%, rgba(11, 11, 12, .98) 100%),
-        url('assets/gt3/hero.png') center / cover no-repeat;
+        url('assets/gt3/orbit/f_001.jpg') center / cover no-repeat;
     }
 
     .gt3-experience::before {
@@ -843,7 +842,7 @@
       overflow: hidden;
       border-left: 1px solid var(--hair-gold);
       border-bottom: 1px solid var(--hair-gold);
-      background: #050506 url('assets/gt3/hero.png') center / cover no-repeat;
+      background: #050506 url('assets/gt3/orbit/f_001.jpg') center / cover no-repeat;
       box-shadow: 0 32px 80px rgba(0, 0, 0, .42);
     }
 
@@ -967,6 +966,379 @@
       .gt3-video-tag {
         flex-direction: column;
       }
+    }
+
+    /* ---- GT3 opening sequence ---- */
+    .hero {
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: 0;
+      justify-content: flex-end;
+      background: #0b0b0c url('assets/gt3/orbit/f_001.jpg') center / cover no-repeat;
+    }
+
+    .hero canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .hero::after {
+      background:
+        linear-gradient(180deg, rgba(11, 11, 12, .72) 0%, rgba(11, 11, 12, 0) 30%, rgba(11, 11, 12, 0) 55%, rgba(11, 11, 12, .96) 100%),
+        linear-gradient(105deg, rgba(11, 11, 12, .5) 0%, rgba(11, 11, 12, 0) 50%);
+    }
+
+    .hero-meta {
+      margin-bottom: auto;
+      padding-top: 132px;
+    }
+
+    .hero-body {
+      padding-bottom: 64px;
+    }
+
+    .hero-hint {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 34px;
+      font-size: 9.5px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .hero-hint .key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--hair-s);
+      color: var(--ink-dim);
+      font-size: 12px;
+      transition: border-color .2s, color .2s;
+    }
+
+    .hero-hint .key.active {
+      border-color: var(--crimson-s);
+      color: var(--crimson-s);
+    }
+
+    .hero-hint .swipe-word {
+      display: none;
+    }
+
+    @media (hover:none) {
+      .hero-hint .keys-word {
+        display: none;
+      }
+
+      .hero-hint .swipe-word {
+        display: inline;
+      }
+    }
+
+    .scroll-cue {
+      position: absolute;
+      right: 48px;
+      bottom: 40px;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      writing-mode: vertical-rl;
+    }
+
+    .scroll-cue::after {
+      content: "";
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(180deg, var(--crimson-s), transparent);
+      animation: cueDrop 2.2s ease-in-out infinite;
+    }
+
+    @keyframes cueDrop {
+      0%,
+      100% {
+        transform: scaleY(.3);
+        transform-origin: top;
+        opacity: .4;
+      }
+
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width:720px) {
+      .scroll-cue {
+        display: none;
+      }
+    }
+
+    .veil {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      transition: opacity .8s ease, visibility .8s;
+    }
+
+    .veil.gone {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .veil .glyph {
+      color: var(--crimson-s);
+      font-size: 15px;
+      letter-spacing: .3em;
+    }
+
+    .veil .bar-track {
+      width: 180px;
+      height: 1px;
+      background: var(--hair);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .veil .bar-fill {
+      position: absolute;
+      inset: 0;
+      background: var(--crimson-s);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+
+    .veil .pct {
+      font-size: 9.5px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .stage {
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+    }
+
+    .stage canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .stage .stage-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(11, 11, 12, .78) 0%, rgba(11, 11, 12, 0) 26%, rgba(11, 11, 12, 0) 70%, rgba(11, 11, 12, .85) 100%);
+      pointer-events: none;
+    }
+
+    .stage .stage-head {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding-top: 120px;
+    }
+
+    .stage .stage-head .label {
+      font-size: 10.5px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--crimson-s);
+      margin-bottom: 18px;
+    }
+
+    .stage .stage-head h2 {
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 300;
+      letter-spacing: -.025em;
+      max-width: 18ch;
+    }
+
+    .stage .stage-head h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .stage .stage-foot {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 44px;
+      z-index: 2;
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    .stage .stage-foot .prog {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stage .stage-foot .prog-track {
+      width: 120px;
+      height: 1px;
+      background: var(--hair-s);
+      position: relative;
+    }
+
+    .stage .stage-foot .prog-fill {
+      position: absolute;
+      inset: 0;
+      background: var(--crimson-s);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .spec-list {
+      position: absolute;
+      right: 48px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      width: min(340px, 38vw);
+      border: 1px solid var(--hair);
+      background: rgba(11, 11, 12, .55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .spec {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--hair);
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .spec:last-child {
+      border-bottom: 0;
+    }
+
+    .spec .s-num {
+      font-size: 9px;
+      letter-spacing: .22em;
+      color: var(--crimson-s);
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .spec .s-val {
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .spec .s-val em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    @media (max-width:720px) {
+      .spec-list {
+        right: 22px;
+        left: 22px;
+        width: auto;
+        top: auto;
+        bottom: 96px;
+        transform: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .spec {
+        min-width: 0;
+        padding: 14px 16px;
+        border-right: 1px solid var(--hair);
+      }
+
+      .spec:nth-child(even) {
+        border-right: 0;
+      }
+
+      .spec .s-val {
+        font-size: 14px;
+      }
+
+      .stage .stage-head {
+        padding-top: 104px;
+      }
+    }
+
+    .atmo {
+      position: relative;
+      height: 92vh;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: #0b0b0c url('assets/gt3/orbit/f_001.jpg') center / cover no-repeat;
+    }
+
+    .atmo video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .atmo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(11, 11, 12, .92) 0%, rgba(11, 11, 12, .15) 40%, rgba(11, 11, 12, .2) 62%, rgba(11, 11, 12, .96) 100%);
+      pointer-events: none;
+    }
+
+    .atmo .wrap {
+      z-index: 2;
+      padding-bottom: 88px;
+    }
+
+    .atmo-line {
+      font-weight: 300;
+      font-size: clamp(30px, 4.4vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      max-width: 18ch;
+    }
+
+    .atmo-line em {
+      font-style: italic;
+      color: var(--gold);
     }
 
     /* ---- services ---- */
@@ -1388,6 +1760,7 @@
       z-index: 0;
       background-size: cover;
       background-position: center;
+      background-color: #151518;
       filter: grayscale(.22) brightness(.6);
       transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s;
     }
@@ -1926,7 +2299,7 @@
   <!-- NAV -->
   <nav class="top" id="topnav">
     <a href="#top" class="brand">
-      <div class="brand-logo"><img src="assets/shield.png" alt="Euro Mecanico Corp"></div>
+      <div class="brand-logo"><img src="assets/shield-web.png" alt="Euro Mecanico Corp"></div>
       <div class="brand-info">
         <div class="name">Euro Mecanico <span>CORP</span></div>
         <div class="sub">Porsche Specialists · PR</div>
@@ -1936,7 +2309,7 @@
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#about" data-i18n="nav_about">About</a>
       <a href="#models" data-i18n="nav_models">Models</a>
-      <a href="#gt3-experience" data-i18n="nav_gt3">GT3</a>
+      <a href="#top" data-i18n="nav_gt3">GT3</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
@@ -1945,8 +2318,151 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <div class="veil" id="veil">
+    <div class="glyph">EURO MECANICO</div>
+    <div class="bar-track">
+      <div class="bar-fill" id="veilFill"></div>
+    </div>
+    <div class="pct" id="veilPct">0%</div>
+  </div>
+  <script>
+    window.__veilFallback = setTimeout(() => {
+      document.getElementById('veil')?.classList.add('gone');
+      document.querySelectorAll('.hero .fade').forEach(el => el.classList.add('in'));
+    }, 2800);
+  </script>
+
+  <!-- HERO - GT3 ORBIT -->
   <header class="hero" id="top">
+    <canvas id="orbitCanvas"></canvas>
+
+    <div class="wrap hero-meta fade">
+      <div class="loc">Sabana Seca Â· Puerto Rico</div>
+      <div class="mid"><span class="bar"></span><span data-i18n="hero_meta_mid">Independent Porsche
+          Specialists</span><span class="bar"></span></div>
+      <div style="color:var(--crimson-s);display:flex;align-items:center;gap:9px">
+        <span style="width:18px;height:1px;background:var(--crimson-s);display:inline-block"></span><span
+          data-i18n="hero_since">Since 2010</span>
+      </div>
+    </div>
+
+    <div class="wrap hero-body">
+      <div class="hero-label fade" data-i18n="hero_label">Independent specialists</div>
+      <h1 class="fade d1">
+        Precision for<br />
+        those who know<br />
+        the <em><span class="u">difference.</span></em>
+      </h1>
+      <p class="hero-sub fade d2" data-i18n="hero_sub">An independent workshop dedicated exclusively to the service,
+        diagnostics and restoration of Porsche vehicles. Fifteen years of focused expertise under one roof, serving
+        discerning owners throughout Puerto Rico.</p>
+      <div class="hero-actions fade d3">
+        <a href="#contact" class="btn btn-red" data-i18n="hero_cta1">Book a visit <span class="arrow">â†’</span></a>
+        <a href="#services" class="btn" data-i18n="hero_cta2">Our services</a>
+      </div>
+      <div class="hero-hint fade d3" id="heroHint">
+        <span class="key" id="keyL">â†</span>
+        <span class="key" id="keyR">â†’</span>
+        <span><span class="keys-word">Scroll sideways or drag</span><span class="swipe-word">Swipe</span> to rotate the
+          car</span>
+      </div>
+      <div class="hero-stats fade d4">
+        <div class="stat">
+          <div class="n"><span class="count" data-target="15" data-suffix="+">0+</span></div>
+          <div class="l" data-i18n="stat1">Years focused</div>
+        </div>
+        <div class="stat">
+          <div class="n"><span class="count" data-target="7">0</span></div>
+          <div class="l" data-i18n="stat2">Models served</div>
+        </div>
+        <div class="stat">
+          <div class="n">1:1</div>
+          <div class="l" data-i18n="stat3">Direct attention</div>
+        </div>
+        <div class="stat">
+          <div class="n">PR</div>
+          <div class="l" data-i18n="stat4">Sabana Seca</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">Scroll</div>
+  </header>
+
+  <!-- ENGINE - scroll-scrubbed fly-through -->
+  <section class="stage" id="engine">
+    <canvas id="engineCanvas"></canvas>
+    <div class="stage-shade"></div>
+    <div class="stage-head">
+      <div class="wrap">
+        <div class="label">The Engine</div>
+        <h2>Inside the <em>flat-six.</em></h2>
+      </div>
+    </div>
+    <div class="stage-foot">
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%">
+        <span>4.0 L Â· Naturally aspirated</span>
+        <div class="prog"><span>Scroll</span>
+          <div class="prog-track">
+            <div class="prog-fill" id="engineProg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSEMBLY - exploded x-ray view -->
+  <section class="stage" id="assembly">
+    <canvas id="assemblyCanvas"></canvas>
+    <div class="stage-shade"></div>
+    <div class="stage-head">
+      <div class="wrap">
+        <div class="label">The Assembly</div>
+        <h2>Every part, <em>accounted for.</em></h2>
+      </div>
+    </div>
+    <div class="spec-list" id="specList">
+      <div class="spec">
+        <div class="s-num">01</div>
+        <div class="s-val">Naturally aspirated 4.0L <em>flat-six</em></div>
+      </div>
+      <div class="spec">
+        <div class="s-num">02</div>
+        <div class="s-val">510 CV Â· <em>9,000</em> RPM</div>
+      </div>
+      <div class="spec">
+        <div class="s-num">03</div>
+        <div class="s-val">Hand-assembled at <em>Zuffenhausen</em></div>
+      </div>
+      <div class="spec">
+        <div class="s-num">04</div>
+        <div class="s-val">217 hand-finished <em>components</em></div>
+      </div>
+    </div>
+    <div class="stage-foot">
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%">
+        <span>Disassembly Â· Reassembly</span>
+        <div class="prog"><span>Scroll</span>
+          <div class="prog-track">
+            <div class="prog-fill" id="assemblyProg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE interlude -->
+  <section class="atmo" id="atmosphere">
+    <video id="atmoVideo" muted loop playsinline preload="none" poster="assets/gt3/orbit/f_001.jpg">
+      <source src="assets/gt3/atmosphere.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <p class="atmo-line fade">Precision for those who know the <em>difference.</em></p>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <header class="legacy-hero" id="legacy-top" hidden>
     <div class="hero-bg" id="heroBg"></div>
 
     <div class="hero-corner tl"></div>
@@ -2000,7 +2516,7 @@
   </header>
 
   <!-- GT3 EXPERIENCE -->
-  <section class="gt3-experience" id="gt3-experience">
+  <section class="gt3-experience" id="old-gt3-experience" hidden>
     <div class="wrap gt3-shell">
       <div class="gt3-lead">
         <div class="gt3-copy fade">
@@ -2025,9 +2541,7 @@
         </div>
 
         <div class="gt3-video-frame fade d1">
-          <video id="gt3InlineVideo" autoplay muted loop playsinline preload="auto" poster="assets/gt3/hero.png">
-            <source src="assets/gt3/atmosphere.mp4" type="video/mp4">
-          </video>
+          <div aria-hidden="true"></div>
           <div class="gt3-video-tag">
             <span data-i18n="gt3_video_left">GT3 atmosphere</span>
             <span data-i18n="gt3_video_right">Service without shortcuts</span>
@@ -2165,9 +2679,9 @@
       </div>
       <div class="about-grid">
         <div class="about-img fade">
-          <div class="img-crest"><img src="assets/shield.png" alt=""></div>
+          <div class="img-crest"><img src="assets/shield-web.png" alt=""></div>
           <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1400&q=80"
-            alt="Workshop interior">
+            alt="Workshop interior" loading="lazy" decoding="async">
           <div class="img-tag" data-i18n="abt_img_tag">The workshop · Sabana Seca</div>
         </div>
         <div class="about-text">
@@ -2245,7 +2759,7 @@
         <!-- 01 · 911 -->
         <div class="mcard fade" aria-label="Porsche 911 Carrera front three-quarter view">
           <div class="mcard-bg"
-            style="background-image:url('https://models.porsche.com/_next/image?q=100&url=https%3A%2F%2Fprs.porsche.com%2Fiod%2Fimage%2FUS%2F9921B2%2F1%2FN4Igxg9gdgZglgcxALlAQynAtmgLnaAZxQG0BdAGnDSwFMAnNFUOAExRFoA9cBaAGwgB3XjHrQ%2B-WjFwgqEAA74izEADc09OBlnIQrWoQDWuRSAC%2B5qrShq44qHSi6W7PQHUAFnFwMIELABBfgVPJnklAihiVEsqfkRPfCgkVBA2DgARQIBNORBFZWjmOJAFcVYAVzAXdLcQAE4GgCYARgAhZvzCqJjQSFhEUhBWgHEADnyAZgBlABZ8uYAxADZF0YAFRYBVdvyAVga9qn2ADVP8lYBJKcuAOQBFfIB2QIAZfIaNyaoGgC0AKL5AEAWS6VFGrSW%2BSuADVwSAru5blQ3qMACqZABKHyoAHlWvkNgAJfIPfaBMlYhpk7Y-EDbDY0qiwgDCCL%2BrRmIEo4AglWc9AAnhxttyqFgIAZ%2BDlaJoUM0AAzNFaWKwgQi0XDJBB9EAwCD0HC6MopfK4RjRBSaGy6C2VWiWIA%3FclientId%3Dicc&w=3840')">
+            data-bg="https://models.porsche.com/_next/image?q=100&amp;url=https%3A%2F%2Fprs.porsche.com%2Fiod%2Fimage%2FUS%2F9921B2%2F1%2FN4Igxg9gdgZglgcxALlAQynAtmgLnaAZxQG0BdAGnDSwFMAnNFUOAExRFoA9cBaAGwgB3XjHrQ%2B-WjFwgqEAA74izEADc09OBlnIQrWoQDWuRSAC%2B5qrShq44qHSi6W7PQHUAFnFwMIELABBfgVPJnklAihiVEsqfkRPfCgkVBA2DgARQIBNORBFZWjmOJAFcVYAVzAXdLcQAE4GgCYARgAhZvzCqJjQSFhEUhBWgHEADnyAZgBlABZ8uYAxADZF0YAFRYBVdvyAVga9qn2ADVP8lYBJKcuAOQBFfIB2QIAZfIaNyaoGgC0AKL5AEAWS6VFGrSW%2BSuADVwSAru5blQ3qMACqZABKHyoAHlWvkNgAJfIPfaBMlYhpk7Y-EDbDY0qiwgDCCL%2BrRmIEo4AglWc9AAnhxttyqFgIAZ%2BDlaJoUM0AAzNFaWKwgQi0XDJBB9EAwCD0HC6MopfK4RjRBSaGy6C2VWiWIA%3FclientId%3Dicc&amp;w=3840">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2260,7 +2774,7 @@
         <!-- 02 · Boxster -->
         <div class="mcard fade d1" aria-label="Porsche 718 Boxster">
           <div class="mcard-bg"
-            style="background-image:url('https://a.storyblok.com/f/322327/1940x792/166223a17e/bx24i3kox0010_rgb-pasm.jpg/m/975x397/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa'); background-position:center">
+            data-bg="https://a.storyblok.com/f/322327/1940x792/166223a17e/bx24i3kox0010_rgb-pasm.jpg/m/975x397/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa" style="background-position:center">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2275,7 +2789,7 @@
         <!-- 03 · Cayman -->
         <div class="mcard fade d1" aria-label="Porsche Cayman GT4 RS">
           <div class="mcard-bg"
-            style="background-image:url('assets/models/cayman.jpeg'); background-position:38% center">
+            data-bg="assets/models/cayman.jpeg" style="background-position:38% center">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2290,7 +2804,7 @@
         <!-- 04 · Cayenne -->
         <div class="mcard fade d2" aria-label="Porsche Cayenne front driving view">
           <div class="mcard-bg"
-            style="background-image:url('https://a.storyblok.com/f/322327/1272x954/b916e455cc/cy24j5box0003-pasm.jpg/m/1272x954/smart/filters%3Aformat%28avif%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
+            data-bg="https://a.storyblok.com/f/322327/1272x954/b916e455cc/cy24j5box0003-pasm.jpg/m/1272x954/smart/filters%3Aformat%28avif%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2305,7 +2819,7 @@
         <!-- 05 · Panamera -->
         <div class="mcard fade" aria-label="Porsche Panamera front three-quarter top view">
           <div class="mcard-bg"
-            style="background-image:url('assets/models/panamera.jpeg'); background-position:center">
+            data-bg="assets/models/panamera.jpeg" style="background-position:center">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2320,7 +2834,7 @@
         <!-- 06 · Macan -->
         <div class="mcard fade d1" aria-label="Porsche Macan front three-quarter studio view">
           <div class="mcard-bg"
-            style="background-image:url('https://a.storyblok.com/f/322327/2250x1980/eb0e85c5d4/ma22t3bix0002-macan-front.jpg/m/760x668/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
+            data-bg="https://a.storyblok.com/f/322327/2250x1980/eb0e85c5d4/ma22t3bix0002-macan-front.jpg/m/760x668/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2335,7 +2849,7 @@
         <!-- 07 · Clásicos air-cooled — representative image only -->
         <div class="mcard fade d2" aria-label="Porsche 356 No. 1 Roadster — representative classic air-cooled">
           <div class="mcard-bg"
-            style="background-image:url('https://porschepictures.flowcenter.de/pmdb/thumbnail.cgi?crop=1&cs=22fa0d8cb97cdddc&h=1089&id=271387&public=1&w=1935')">
+            data-bg="https://porschepictures.flowcenter.de/pmdb/thumbnail.cgi?crop=1&amp;cs=22fa0d8cb97cdddc&amp;h=1089&amp;id=271387&amp;public=1&amp;w=1935">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
@@ -2490,7 +3004,7 @@
   <footer>
     <div class="wrap">
       <div class="foot-main">
-        <div class="foot-crest fade"><img src="assets/shield.png" alt="Euro Mecanico Corp"></div>
+        <div class="foot-crest fade"><img src="assets/shield-web.png" alt="Euro Mecanico Corp"></div>
         <div class="foot-name fade d1">Euro <em>Mecanico</em> <span class="corp">CORP</span></div>
         <div class="foot-tag fade d2" data-i18n="foot_tag">Porsche Independent Specialists<br/>Sabana Seca · Puerto Rico<br/>(787) 344-6328</div>
       </div>
@@ -2500,7 +3014,7 @@
           <a href="#services" data-i18n="nav_services">Services</a>
           <a href="#about" data-i18n="nav_about">About</a>
           <a href="#models" data-i18n="nav_models">Models</a>
-          <a href="#gt3-experience" data-i18n="nav_gt3">GT3</a>
+          <a href="#top" data-i18n="nav_gt3">GT3</a>
           <a href="#contact" data-i18n="nav_contact">Contact</a>
           <a href="#top">↑ Top</a>
         </nav>
@@ -2524,11 +3038,15 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script>
     // ==============================
     // TRANSLATIONS
     // ==============================
-    const T = {
+    window.EMC_TRANSLATIONS = {
       en: {
         nav_services: 'Services',
         nav_about: 'About',
@@ -2781,7 +3299,7 @@
 
     function setLang(l) {
       lang = l;
-      const t = T[l];
+      const t = window.EMC_TRANSLATIONS[l];
       document.documentElement.lang = l;
       document.getElementById('langBtn').textContent = l === 'en' ? 'ES' : 'EN';
 
@@ -2832,6 +3350,277 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
+    // ---- GT3 opening frame sequences ----
+    const SEQ = {
+      orbit: { dir: 'assets/gt3/orbit', count: 121, pad: 3 },
+      engine: { dir: 'assets/gt3/engine', count: 121, pad: 3 },
+      assembly: { dir: 'assets/gt3/assembly', count: 151, pad: 3 },
+    };
+
+    const frameSrc = (seq, i) => `${seq.dir}/f_${String(i + 1).padStart(seq.pad, '0')}.jpg`;
+
+    function drawCover(ctx, img) {
+      const cw = ctx.canvas.width, ch = ctx.canvas.height;
+      const ir = img.width / img.height, cr = cw / ch;
+      let dw, dh;
+      if (cr > ir) { dw = cw; dh = cw / ir; } else { dh = ch; dw = ch * ir; }
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+    }
+
+    class FrameSequence {
+      constructor(canvas, seq, onProgress) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.seq = seq;
+        this.frames = new Array(seq.count).fill(null);
+        this.loaded = 0;
+        this.current = -1;
+        this.onProgress = onProgress || (() => { });
+        this.resize();
+        window.addEventListener('resize', () => { this.resize(); this.render(Math.max(this.current, 0), true); });
+      }
+
+      resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        const r = this.canvas.getBoundingClientRect();
+        this.canvas.width = Math.round(r.width * dpr);
+        this.canvas.height = Math.round(r.height * dpr);
+        this.ctx.imageSmoothingQuality = 'high';
+      }
+
+      load(concurrency = 2) {
+        if (this._loading) return this._loading;
+        this._loading = new Promise(resolve => {
+          let next = 0, settled = this.frames.filter(Boolean).length;
+          const step = () => {
+            while (next < this.seq.count && this.frames[next]) next++;
+            if (settled >= this.seq.count) { resolve(); return; }
+            if (next >= this.seq.count) return;
+            const i = next++;
+            const img = new Image();
+            const done = ok => {
+              if (ok) {
+                this.frames[i] = img;
+                this.loaded++;
+                this.onProgress(this.loaded / this.seq.count);
+                if (this.current === -1 && i === 0) this.render(0, true);
+              }
+              if (++settled === this.seq.count) resolve(); else step();
+            };
+            img.onload = () => done(true);
+            img.onerror = () => done(false);
+            img.src = frameSrc(this.seq, i);
+          };
+          for (let k = 0; k < concurrency; k++) step();
+        });
+        return this._loading;
+      }
+
+      loadFrame(index = 0) {
+        if (this.frames[index]) return Promise.resolve(this.frames[index]);
+        return new Promise(resolve => {
+          const img = new Image();
+          const done = ok => {
+            if (ok) {
+              this.frames[index] = img;
+              this.loaded++;
+              this.onProgress(this.loaded / this.seq.count);
+              this.render(index, true);
+            }
+            resolve(ok ? img : null);
+          };
+          img.onload = () => done(true);
+          img.onerror = () => done(false);
+          img.src = frameSrc(this.seq, index);
+        });
+      }
+
+      render(idx, force) {
+        idx = Math.max(0, Math.min(this.seq.count - 1, Math.round(idx)));
+        if (!force && idx === this.current) return;
+        let img = this.frames[idx];
+        if (!img) {
+          for (let d = 1; d < this.seq.count && !img; d++) {
+            img = this.frames[idx - d] || this.frames[idx + d];
+          }
+        }
+        if (!img) return;
+        this.current = idx;
+        drawCover(this.ctx, img);
+      }
+
+      renderProgress(p) { this.render(p * (this.seq.count - 1)); }
+    }
+
+    const orbitCanvas = document.getElementById('orbitCanvas');
+    const engineCanvas = document.getElementById('engineCanvas');
+    const assemblyCanvas = document.getElementById('assemblyCanvas');
+    let orbitSeq, engineSeq, assemblySeq;
+
+    if (orbitCanvas && engineCanvas && assemblyCanvas) {
+      let veilDone = false;
+      const dropVeil = () => {
+        if (veilDone) return;
+        veilDone = true;
+        if (window.__veilFallback) clearTimeout(window.__veilFallback);
+        document.getElementById('veil')?.classList.add('gone');
+        document.querySelectorAll('.hero .fade').forEach(el => el.classList.add('in'));
+      };
+
+      orbitSeq = new FrameSequence(orbitCanvas, SEQ.orbit, p => {
+        const pct = Math.round(p * 100);
+        const veilFill = document.getElementById('veilFill');
+        const veilPct = document.getElementById('veilPct');
+        if (veilFill) veilFill.style.transform = `scaleX(${p})`;
+        if (veilPct) veilPct.textContent = pct + '%';
+        if (p > 0) dropVeil();
+      });
+      engineSeq = new FrameSequence(engineCanvas, SEQ.engine);
+      assemblySeq = new FrameSequence(assemblyCanvas, SEQ.assembly);
+
+      let orbitFullLoadStarted = false;
+      const loadOrbitSequence = () => {
+        if (orbitFullLoadStarted) return;
+        orbitFullLoadStarted = true;
+        orbitSeq.load(2);
+      };
+
+      orbitSeq.loadFrame(0).then(() => {
+        dropVeil();
+      });
+      setTimeout(dropVeil, 12000);
+
+      const stageProgress = { engine: 0, assembly: 0 };
+      const lazyLoad = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          if (en.target.id === 'engine') engineSeq.load(2).then(() => engineSeq.renderProgress(stageProgress.engine));
+          if (en.target.id === 'assembly') assemblySeq.load(2).then(() => assemblySeq.renderProgress(stageProgress.assembly));
+          lazyLoad.unobserve(en.target);
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
+      lazyLoad.observe(document.getElementById('engine'));
+      lazyLoad.observe(document.getElementById('assembly'));
+
+      let orbitPos = 0;
+      let orbitVel = 0;
+      let idleSpin = true;
+      const stopIdle = () => {
+        idleSpin = false;
+        loadOrbitSequence();
+      };
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          stopIdle();
+          orbitVel += (e.key === 'ArrowRight' ? 1 : -1) * 0.9;
+          const k = document.getElementById(e.key === 'ArrowRight' ? 'keyR' : 'keyL');
+          if (k) {
+            k.classList.add('active');
+            setTimeout(() => k.classList.remove('active'), 180);
+          }
+        }
+      });
+
+      const heroEl = document.querySelector('.hero');
+      let dragging = false, lastX = 0;
+      heroEl.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; stopIdle(); });
+      heroEl.addEventListener('wheel', e => {
+        const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
+        if (!dx) return;
+        e.preventDefault();
+        stopIdle();
+        orbitVel += dx * 0.018;
+        const k = document.getElementById(dx > 0 ? 'keyR' : 'keyL');
+        if (k) { k.classList.add('active'); clearTimeout(k._t); k._t = setTimeout(() => k.classList.remove('active'), 180); }
+      }, { passive: false });
+      window.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        const dx = e.clientX - lastX;
+        lastX = e.clientX;
+        orbitVel += dx * 0.045;
+      });
+      window.addEventListener('pointerup', () => dragging = false);
+
+      (function orbitTick() {
+        requestAnimationFrame(orbitTick);
+        if (document.hidden) return;
+        const r = heroEl.getBoundingClientRect();
+        if (r.bottom <= 0 || r.top >= innerHeight) return;
+        if (idleSpin && !orbitFullLoadStarted) return;
+        if (idleSpin) orbitVel += 0.028;
+        orbitPos += orbitVel;
+        orbitVel *= 0.88;
+        const n = SEQ.orbit.count;
+        orbitPos = ((orbitPos % n) + n) % n;
+        orbitSeq.render(orbitPos);
+      })();
+
+      if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+        if (window.Lenis) {
+          const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(t => lenis.raf(t * 1000));
+          gsap.ticker.lagSmoothing(0);
+        }
+
+        ScrollTrigger.create({
+          trigger: '#engine',
+          start: 'top top',
+          end: '+=250%',
+          pin: true,
+          scrub: true,
+          onUpdate: self => {
+            stageProgress.engine = self.progress;
+            engineSeq.renderProgress(self.progress);
+            document.getElementById('engineProg').style.transform = `scaleX(${self.progress})`;
+          }
+        });
+
+        const specs = gsap.utils.toArray('#specList .spec');
+        ScrollTrigger.create({
+          trigger: '#assembly',
+          start: 'top top',
+          end: '+=300%',
+          pin: true,
+          scrub: true,
+          onUpdate: self => {
+            stageProgress.assembly = self.progress;
+            assemblySeq.renderProgress(self.progress);
+            document.getElementById('assemblyProg').style.transform = `scaleX(${self.progress})`;
+            specs.forEach((el, i) => {
+              const t = 0.18 + i * 0.14;
+              const vis = gsap.utils.clamp(0, 1, (self.progress - t) / 0.09);
+              el.style.opacity = vis;
+              el.style.transform = `translateY(${(1 - vis) * 14}px)`;
+            });
+          }
+        });
+      }
+
+      const atmoVideo = document.getElementById('atmoVideo');
+      if (atmoVideo) {
+        const playAtmo = () => atmoVideo.play().catch(() => { });
+        atmoVideo.muted = true;
+        atmoVideo.setAttribute('muted', '');
+        atmoVideo.setAttribute('playsinline', '');
+
+        if (window.ScrollTrigger) {
+          ScrollTrigger.create({
+            trigger: '#atmosphere',
+            start: 'top 80%',
+            end: 'bottom top',
+            onEnter: playAtmo,
+            onEnterBack: playAtmo,
+            onLeave: () => atmoVideo.pause(),
+            onLeaveBack: () => atmoVideo.pause(),
+          });
+        }
+      }
+    }
+
     // ---- reveal ----
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -2840,6 +3629,26 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade').forEach(el => io.observe(el));
     requestAnimationFrame(() => document.querySelectorAll('.hero .fade').forEach(el => el.classList.add('in')));
+
+    // ---- lazy backgrounds ----
+    const loadLazyBg = el => {
+      if (!el?.dataset.bg) return;
+      el.style.backgroundImage = `url("${el.dataset.bg}")`;
+      el.removeAttribute('data-bg');
+    };
+    const lazyBgs = document.querySelectorAll('[data-bg]');
+    if ('IntersectionObserver' in window) {
+      const bgIO = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          loadLazyBg(entry.target);
+          bgIO.unobserve(entry.target);
+        });
+      }, { rootMargin: '1200px 0px', threshold: 0.01 });
+      lazyBgs.forEach(el => bgIO.observe(el));
+    } else {
+      lazyBgs.forEach(loadLazyBg);
+    }
 
     // ---- anime.js extras ----
     if (window.anime) {
@@ -2897,27 +3706,6 @@
     }, { threshold: 0.5 });
     document.querySelectorAll('.count').forEach(el => cIO.observe(el));
 
-    // ---- integrated GT3 video ----
-    const gt3InlineVideo = document.getElementById('gt3InlineVideo');
-    if (gt3InlineVideo) {
-      const playGt3 = () => gt3InlineVideo.play().catch(() => { });
-      gt3InlineVideo.muted = true;
-      gt3InlineVideo.setAttribute('muted', '');
-      gt3InlineVideo.setAttribute('playsinline', '');
-      gt3InlineVideo.addEventListener('loadeddata', playGt3, { once: true });
-
-      const gt3VideoIO = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            playGt3();
-          } else {
-            gt3InlineVideo.pause();
-          }
-        });
-      }, { threshold: 0.25 });
-      gt3VideoIO.observe(gt3InlineVideo);
-    }
-
     // ---- VIN decoder (NHTSA API) ----
     const vinInput = document.getElementById('vinInput');
     const vinResult = document.getElementById('vinResult');
@@ -2928,8 +3716,8 @@
       clearTimeout(vinTimer);
       vinResult.className = 'vin-result';
       if (vin.length === 0) { vinResult.textContent = ''; return; }
-      if (vin.length < 17) { vinResult.textContent = `${vin.length} ${T[lang].vin_chars}`; return; }
-      vinResult.textContent = T[lang].vin_decoding;
+      if (vin.length < 17) { vinResult.textContent = `${vin.length} ${window.EMC_TRANSLATIONS[lang].vin_chars}`; return; }
+      vinResult.textContent = window.EMC_TRANSLATIONS[lang].vin_decoding;
       vinTimer = setTimeout(async () => {
         try {
           const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${vin}?format=json`);
@@ -2940,11 +3728,11 @@
             vinResult.textContent = `✦ ${year} ${make} ${model}`;
             vinResult.classList.add('ok');
           } else {
-            vinResult.textContent = T[lang].vin_err_bad;
+            vinResult.textContent = window.EMC_TRANSLATIONS[lang].vin_err_bad;
             vinResult.classList.add('err');
           }
         } catch {
-          vinResult.textContent = T[lang].vin_err_conn;
+          vinResult.textContent = window.EMC_TRANSLATIONS[lang].vin_err_conn;
           vinResult.classList.add('err');
         }
       }, 400);
@@ -2985,7 +3773,7 @@
       const btn = form.querySelector('button[type="submit"]');
 
       btn.disabled = true;
-      btn.textContent = T[lang].sending;
+      btn.textContent = window.EMC_TRANSLATIONS[lang].sending;
 
       const data = new FormData(form);
       const vinEl = document.getElementById('vinResult');
@@ -3002,13 +3790,13 @@
           success.style.display = 'block';
           // update success message in current language
           const sp = success.querySelector('p');
-          if (sp) sp.innerHTML = T[lang].form_success.replace('\n', '<br/>');
+          if (sp) sp.innerHTML = window.EMC_TRANSLATIONS[lang].form_success.replace('\n', '<br/>');
         } else {
           throw new Error(json.message || 'Error');
         }
       } catch (err) {
         btn.disabled = false;
-        btn.innerHTML = `${T[lang].form_submit.replace(' →', '')} <span class="arrow">→</span>`;
+        btn.innerHTML = `${window.EMC_TRANSLATIONS[lang].form_submit.replace(' →', '')} <span class="arrow">→</span>`;
         let errEl = document.getElementById('formError');
         if (!errEl) {
           errEl = document.createElement('p');
@@ -3016,7 +3804,7 @@
           errEl.style.cssText = 'font-family:var(--serif);font-size:10.5px;color:var(--crimson-s);letter-spacing:.1em;margin-top:12px';
           btn.parentNode.insertAdjacentElement('afterend', errEl);
         }
-        errEl.textContent = T[lang].send_err;
+        errEl.textContent = window.EMC_TRANSLATIONS[lang].send_err;
       }
     }
   </script>
