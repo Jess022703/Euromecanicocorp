@@ -1022,6 +1022,7 @@
       overflow: hidden;
       display: flex;
       align-items: flex-end;
+      background: #0b0b0c url('assets/gt3/hero.png') center / cover no-repeat;
     }
 
     .atmo video {
@@ -2178,7 +2179,9 @@
 
   <!-- ATMOSPHERE interlude -->
   <section class="atmo" id="atmosphere">
-    <video id="atmoVideo" muted loop playsinline preload="metadata" src="assets/gt3/atmosphere.mp4"></video>
+    <video id="atmoVideo" autoplay muted loop playsinline preload="auto" poster="assets/gt3/hero.png">
+      <source src="assets/gt3/atmosphere.mp4" type="video/mp4">
+    </video>
     <div class="wrap">
       <p class="atmo-line fade">Precision for those who know the <em>difference.</em></p>
     </div>
@@ -2873,17 +2876,26 @@
       }
     });
 
-    // atmosphere video: play when visible
+    // atmosphere video: autoplay when possible, resume when visible
     const atmoVideo = document.getElementById('atmoVideo');
-    ScrollTrigger.create({
-      trigger: '#atmosphere',
-      start: 'top 80%',
-      end: 'bottom top',
-      onEnter: () => atmoVideo.play().catch(() => { }),
-      onEnterBack: () => atmoVideo.play().catch(() => { }),
-      onLeave: () => atmoVideo.pause(),
-      onLeaveBack: () => atmoVideo.pause(),
-    });
+    if (atmoVideo) {
+      const playAtmo = () => atmoVideo.play().catch(() => { });
+      atmoVideo.muted = true;
+      atmoVideo.setAttribute('muted', '');
+      atmoVideo.setAttribute('playsinline', '');
+      atmoVideo.addEventListener('loadeddata', playAtmo, { once: true });
+      playAtmo();
+
+      ScrollTrigger.create({
+        trigger: '#atmosphere',
+        start: 'top 80%',
+        end: 'bottom top',
+        onEnter: playAtmo,
+        onEnterBack: playAtmo,
+        onLeave: () => atmoVideo.pause(),
+        onLeaveBack: () => atmoVideo.pause(),
+      });
+    }
 
     // ==============================================================
     // Shared site behaviors — nav, cursor, fade reveals, form
