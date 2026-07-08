@@ -1243,90 +1243,6 @@
       transform: scaleX(1);
     }
 
-    /* ---- Boxster / Cayman split card ---- */
-    .mcard--wide {
-      grid-column: span 2;
-      aspect-ratio: 3/2;
-    }
-
-    .mcard-bg-half {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 50%;
-      background-size: cover;
-      background-position: center;
-      filter: grayscale(.22) brightness(.6);
-      transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s;
-      z-index: 0;
-    }
-
-    .mcard-bg-half.left {
-      left: 0;
-    }
-
-    .mcard-bg-half.right {
-      right: 0;
-    }
-
-    .mcard--wide:hover .mcard-bg-half {
-      transform: scale(1.05);
-      filter: grayscale(.08) brightness(.74);
-    }
-
-    .mcard-split-divider {
-      position: absolute;
-      left: calc(50% - 1px);
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(180deg, transparent 8%, rgba(212, 46, 58, .55) 30%, rgba(212, 46, 58, .55) 70%, transparent 92%);
-      z-index: 3;
-      pointer-events: none;
-    }
-
-    .mcard-sub-labels {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 4;
-      display: flex;
-      pointer-events: none;
-    }
-
-    .mcard-sub-labels .slbl {
-      flex: 1;
-      padding: 16px 18px;
-      font-family: var(--serif);
-      font-size: 9px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--crimson-s);
-      opacity: .85;
-    }
-
-    .mcard-sub-labels .slbl.right {
-      text-align: right;
-    }
-
-    @media (max-width:420px) {
-      .mcard--wide {
-        grid-column: span 1;
-        aspect-ratio: 3/4;
-      }
-
-      .mcard-bg-half.right,
-      .mcard-split-divider,
-      .mcard-sub-labels {
-        display: none;
-      }
-
-      .mcard-bg-half.left {
-        width: 100%;
-      }
-    }
-
     /* ---- contact ---- */
     .contact-layout {
       display: grid;
@@ -2055,37 +1971,44 @@
           </div>
         </div>
 
-        <!-- 02 · Boxster / Cayman — split card, spans 2 columns -->
-        <div class="mcard mcard--wide fade d1" aria-label="Porsche 718 Boxster and Cayman">
-          <div class="mcard-bg-half left"
-            style="background-image:url('https://a.storyblok.com/f/322327/1940x792/166223a17e/bx24i3kox0010_rgb-pasm.jpg/m/975x397/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
-          </div>
-          <div class="mcard-bg-half right"
-            style="background-image:url('https://a.storyblok.com/f/322327/1500x792/1bd9139eb3/cm21n3kox0003-718-cayman-gts-40-driving.jpg/m/750x396/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
-          </div>
-          <div class="mcard-split-divider"></div>
-          <div class="mcard-sub-labels">
-            <span class="slbl">Boxster</span>
-            <span class="slbl right">Cayman</span>
+        <!-- 02 · Boxster -->
+        <div class="mcard fade d1" aria-label="Porsche 718 Boxster">
+          <div class="mcard-bg"
+            style="background-image:url('https://a.storyblok.com/f/322327/1940x792/166223a17e/bx24i3kox0010_rgb-pasm.jpg/m/975x397/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa'); background-position:center">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
             <div class="mcard-num">02</div>
-            <div class="mcard-name">Boxster <em>/</em> Cayman</div>
-            <div class="mcard-desc" data-i18n="mod2_desc">Mid-engine, 986 / 987 / 981 / 982. Includes GT4 and Spyder
-              models.</div>
+            <div class="mcard-name">Boxster</div>
+            <div class="mcard-desc" data-i18n="mod2_desc">Open-top mid-engine roadster, 986 / 987 / 981 / 982.
+              Includes S, GTS and Spyder models.</div>
             <div class="mcard-years">1996 – 2026</div>
           </div>
         </div>
 
-        <!-- 03 · Cayenne -->
+        <!-- 03 · Cayman -->
+        <div class="mcard fade d1" aria-label="Porsche Cayman GT4 RS">
+          <div class="mcard-bg"
+            style="background-image:url('assets/models/cayman.jpeg'); background-position:38% center">
+          </div>
+          <div class="mcard-line"></div>
+          <div class="mcard-body">
+            <div class="mcard-num">03</div>
+            <div class="mcard-name">Cayman</div>
+            <div class="mcard-desc" data-i18n="mod_cayman_desc">Mid-engine coupe, 987 / 981 / 982. Includes GT4, GTS
+              and RS models.</div>
+            <div class="mcard-years">2005 – 2026</div>
+          </div>
+        </div>
+
+        <!-- 04 · Cayenne -->
         <div class="mcard fade d2" aria-label="Porsche Cayenne front driving view">
           <div class="mcard-bg"
             style="background-image:url('https://a.storyblok.com/f/322327/1272x954/b916e455cc/cy24j5box0003-pasm.jpg/m/1272x954/smart/filters%3Aformat%28avif%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
-            <div class="mcard-num">03</div>
+            <div class="mcard-num">04</div>
             <div class="mcard-name">Cayenne</div>
             <div class="mcard-desc" data-i18n="mod3_desc">V6, V8 and plug-in hybrid SUV. Includes Turbo and Coupé
               variants.</div>
@@ -2093,14 +2016,14 @@
           </div>
         </div>
 
-        <!-- 04 · Panamera -->
+        <!-- 05 · Panamera -->
         <div class="mcard fade" aria-label="Porsche Panamera front three-quarter top view">
           <div class="mcard-bg"
-            style="background-image:url('https://a.storyblok.com/f/322327/1272x954/9d3913961d/pa24p5kox000-panamera-turbo-e-hybrid-rear-axle-steering.jpg/m/1272x954/smart/filters%3Aformat%28avif%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
+            style="background-image:url('assets/models/panamera.jpeg'); background-position:center">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
-            <div class="mcard-num">04</div>
+            <div class="mcard-num">05</div>
             <div class="mcard-name">Panamera</div>
             <div class="mcard-desc" data-i18n="mod4_desc">Four-door grand tourer. Sedan and Sport Turismo, hybrid and
               twin-turbo V8.</div>
@@ -2108,14 +2031,14 @@
           </div>
         </div>
 
-        <!-- 05 · Macan -->
+        <!-- 06 · Macan -->
         <div class="mcard fade d1" aria-label="Porsche Macan front three-quarter studio view">
           <div class="mcard-bg"
             style="background-image:url('https://a.storyblok.com/f/322327/2250x1980/eb0e85c5d4/ma22t3bix0002-macan-front.jpg/m/760x668/smart/filters%3Aformat%28webp%29?dpl=dpl_8atxMaaNGP36tnCF6qDKibefeoTa')">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
-            <div class="mcard-num">05</div>
+            <div class="mcard-num">06</div>
             <div class="mcard-name">Macan</div>
             <div class="mcard-desc" data-i18n="mod5_desc">Compact sports SUV — combustion variants and the new
               all-electric platform.</div>
@@ -2123,14 +2046,14 @@
           </div>
         </div>
 
-        <!-- 06 · Clásicos air-cooled — representative image only -->
+        <!-- 07 · Clásicos air-cooled — representative image only -->
         <div class="mcard fade d2" aria-label="Porsche 356 No. 1 Roadster — representative classic air-cooled">
           <div class="mcard-bg"
             style="background-image:url('https://porschepictures.flowcenter.de/pmdb/thumbnail.cgi?crop=1&cs=22fa0d8cb97cdddc&h=1089&id=271387&public=1&w=1935')">
           </div>
           <div class="mcard-line"></div>
           <div class="mcard-body">
-            <div class="mcard-num">06</div>
+            <div class="mcard-num">07</div>
             <div class="mcard-name">Clásicos <em>air-cooled</em></div>
             <div class="mcard-desc" data-i18n="mod7_desc">356, classic 911/912, 930, 964 and 993. Mechanical restoration
               and preservation.</div>
@@ -2374,7 +2297,8 @@
         mod_title: 'From <em>classic</em> air-cooled to the latest generation.',
         mod_kicker: 'Seven decades of engineering under one roof. We work on both air-cooled platforms and the latest turbo generations.',
         mod1_desc: 'Coupé & Cabriolet — air-cooled (964, 993) to current 992. Turbo, GT3, GTS.',
-        mod2_desc: 'Mid-engine, 986 / 987 / 981 / 982. Includes GT4 and Spyder models.',
+        mod2_desc: 'Open-top mid-engine roadster, 986 / 987 / 981 / 982. Includes S, GTS and Spyder models.',
+        mod_cayman_desc: 'Mid-engine coupe, 987 / 981 / 982. Includes GT4, GTS and RS models.',
         mod3_desc: 'V6, V8 and plug-in hybrid SUV. Includes Turbo and Coupé variants.',
         mod4_desc: 'Four-door grand tourer. Sedan and Sport Turismo, hybrid and twin-turbo V8.',
         mod5_desc: 'Compact sports SUV — combustion variants and the new all-electric platform.',
@@ -2481,7 +2405,8 @@
         mod_title: 'De los <em>clásicos</em> enfriados por aire a la última generación.',
         mod_kicker: 'Siete décadas de ingeniería bajo un mismo techo. Trabajamos tanto plataformas aire-refrigerado como las últimas generaciones turbo y eléctricas.',
         mod1_desc: 'Coupé y cabrio — de los aire-refrigerados (964, 993) a los 992 actuales. Turbo, GT3, GTS.',
-        mod2_desc: 'Motor central, 986 / 987 / 981 / 982. Incluye GT4 y modelos Spyder.',
+        mod2_desc: 'Roadster de motor central, 986 / 987 / 981 / 982. Incluye S, GTS y modelos Spyder.',
+        mod_cayman_desc: 'Coupe de motor central, 987 / 981 / 982. Incluye GT4, GTS y modelos RS.',
         mod3_desc: 'SUV V6, V8 y plug-in hybrid. Incluye variantes Turbo y Coupé.',
         mod4_desc: 'Grand turismo de cuatro puertas. Sedán y Sport Turismo, hybrid y V8 biturbo.',
         mod5_desc: 'Compacto deportivo en variantes de combustión y la nueva plataforma 100% eléctrica.',
