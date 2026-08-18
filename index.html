@@ -3559,8 +3559,8 @@
     // ---- GT3 opening frame sequences ----
     const SEQ = {
       orbit: { dir: 'assets/gt3/orbit', count: 121, pad: 3 },
-      engine: { dir: 'assets/gt3/engine', count: 121, pad: 3 },
-      assembly: { dir: 'assets/gt3/assembly', count: 151, pad: 3 },
+      engine: { dir: 'assets/gt3/engine', count: 39, pad: 3 },
+      assembly: { dir: 'assets/gt3/assembly', count: 150, pad: 3 },
     };
 
     const frameSrc = (seq, i) => `${seq.dir}/f_${String(i + 1).padStart(seq.pad, '0')}.jpg`;
@@ -3908,7 +3908,7 @@
         ScrollTrigger.create({
           trigger: '#engine',
           start: 'top top',
-          end: '+=250%',
+          end: '+=80%',
           pin: true,
           anticipatePin: 1,
           scrub: 0.18,
