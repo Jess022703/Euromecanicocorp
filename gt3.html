@@ -859,6 +859,15 @@
       z-index: 0;
     }
 
+    .stage video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
     .stage .stage-shade {
       position: absolute;
       inset: 0;
@@ -2139,7 +2148,9 @@
 
   <!-- ASSEMBLY — exploded x-ray view -->
   <section class="stage" id="assembly">
-    <canvas id="assemblyCanvas"></canvas>
+    <video id="assemblyVideo" muted playsinline preload="auto" poster="assets/gt3/assembly/f_001.jpg">
+      <source src="assets/gt3/assembly.mp4" type="video/mp4">
+    </video>
     <div class="stage-shade"></div>
     <div class="stage-head">
       <div class="wrap">
@@ -2648,7 +2659,6 @@
     const SEQ = {
       orbit: { dir: 'assets/gt3/orbit', count: 121, pad: 3 },
       engine: { dir: 'assets/gt3/engine', count: 121, pad: 3 },
-      assembly: { dir: 'assets/gt3/assembly', count: 151, pad: 3 },
     };
 
     const frameSrc = (seq, i) => `${seq.dir}/f_${String(i + 1).padStart(seq.pad, '0')}.jpg`;
@@ -2754,25 +2764,30 @@
       if (p >= 0.3) dropVeil();
     });
     const engineSeq = new FrameSequence(document.getElementById('engineCanvas'), SEQ.engine);
-    const assemblySeq = new FrameSequence(document.getElementById('assemblyCanvas'), SEQ.assembly);
 
     orbitSeq.load().then(dropVeil);
     // safety: never leave the visitor stuck on the veil
     setTimeout(dropVeil, 12000);
 
-    // load the scrub sequences only when their sections approach;
+    // load the scrub sequence only when its section approaches;
     // when done, repaint at the current scroll progress
     const stageProgress = { engine: 0, assembly: 0 };
     const lazyLoad = new IntersectionObserver(entries => {
       entries.forEach(en => {
         if (!en.isIntersecting) return;
         if (en.target.id === 'engine') engineSeq.load().then(() => engineSeq.renderProgress(stageProgress.engine));
-        if (en.target.id === 'assembly') assemblySeq.load().then(() => assemblySeq.renderProgress(stageProgress.assembly));
         lazyLoad.unobserve(en.target);
       });
     }, { rootMargin: '150% 0px' });
     lazyLoad.observe(document.getElementById('engine'));
-    lazyLoad.observe(document.getElementById('assembly'));
+
+    // ASSEMBLY — real video, scrubbed via currentTime instead of frame images
+    const assemblyVideo = document.getElementById('assemblyVideo');
+    let assemblyReady = false;
+    assemblyVideo.addEventListener('loadedmetadata', () => {
+      assemblyReady = true;
+      assemblyVideo.currentTime = stageProgress.assembly * assemblyVideo.duration;
+    }, { once: true });
 
     // ==============================================================
     // HERO — arrow keys / swipe / drag rotate the GT3
@@ -2864,7 +2879,7 @@
       scrub: true,
       onUpdate: self => {
         stageProgress.assembly = self.progress;
-        assemblySeq.renderProgress(self.progress);
+        if (assemblyReady) assemblyVideo.currentTime = self.progress * assemblyVideo.duration;
         document.getElementById('assemblyProg').style.transform = `scaleX(${self.progress})`;
         // specs appear one by one across the middle of the scrub
         specs.forEach((el, i) => {
